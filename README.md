@@ -1,2 +1,2 @@
 # luvhealth.org
-A healthcare marketplace
+A self-pay healthcare marketplace
