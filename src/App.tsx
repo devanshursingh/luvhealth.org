@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Calendar, CreditCard, UserPlus, Menu, X } from 'lucide-react';
+import { Search, Calendar, CreditCard, UserPlus, Menu, X, Users, DollarSign } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
 
 function Logo({ size = 40, showText = true }) {
@@ -285,6 +285,44 @@ export default function LuvHealthWebsite() {
             <p className="text-gray-600 mb-8 text-lg">
               Join our network of quality-focused healthcare providers and connect with patients who value personalized care
             </p>
+
+            {/* Provider Benefits */}
+            <div className="grid md:grid-cols-2 gap-8 mb-12 text-left">
+              {/* Benefit 1 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <Users className="w-6 h-6 text-rose-500" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    Find Self-Paying Patients
+                  </h3>
+                  <p className="text-gray-600 text-lg">
+                    Connect with a growing number of patients choosing to pay directly for convenient, quality care
+                  </p>
+                </div>
+              </div>
+
+              {/* Benefit 2 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-rose-500" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    'As low as' Pricing
+                  </h3>
+                  <p className="text-gray-600 text-lg">
+                    List your visits with 'as low as' pricing and create multiple tiers for different offerings
+                  </p>
+                </div>
+              </div>
+            </div>
+
             <a 
               href="#provider-signup"
               className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
