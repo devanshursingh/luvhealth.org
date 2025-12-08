@@ -113,15 +113,25 @@ export default function LuvHealthWebsite() {
       {/* Hero Section */}
       <section className="relative pt-40 pb-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Image with Overlay */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${doctorPatientImg})`,
-            filter: 'brightness(0.9)',
-            backgroundSize: '120%',
-            backgroundPosition: '20% 25%'
-          }}
-        />
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src={doctorPatientImg}
+            alt="Doctor and patient"
+            className="brightness-90"
+            style={{
+              objectFit: 'cover',
+              objectPosition: '20% 25%',
+              width: '120%',
+              height: '120%',
+              minWidth: '100%',
+              minHeight: '100%',
+              position: 'absolute',
+              top: '-10%',
+              left: '-10%',
+              display: 'block'
+            }}
+          />
+        </div>
         
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
