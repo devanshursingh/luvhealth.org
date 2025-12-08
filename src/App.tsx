@@ -226,7 +226,7 @@ export default function LuvHealthWebsite() {
                   Simple Payment
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Pay online for the first visit only, use insurance after
+                  Pay online for ASAP visit, reimburse with superbill later
                 </p>
               </div>
             </div>
