@@ -121,13 +121,15 @@ export default function LuvHealthWebsite() {
             style={{
               objectFit: 'cover',
               objectPosition: '20% 25%',
-              width: '120%',
-              height: '120%',
+              width: '100%',
+              height: '100%',
               minWidth: '100%',
               minHeight: '100%',
               position: 'absolute',
-              top: '-10%',
-              left: '-10%',
+              top: 0,
+              left: 0,
+              transform: 'scale(1.2)',
+              transformOrigin: '20% 25%',
               display: 'block'
             }}
           />
@@ -147,7 +149,7 @@ export default function LuvHealthWebsite() {
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto">
-            <div className="flex flex-col sm:flex-row gap-4 bg-white/95 backdrop-blur-sm p-2 rounded-full shadow-2xl">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 bg-white/95 backdrop-blur-sm p-2 sm:p-2 rounded-2xl sm:rounded-full shadow-2xl">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
                 <input
@@ -156,12 +158,12 @@ export default function LuvHealthWebsite() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                  className="w-full pl-12 pr-4 py-4 rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-rose-500 text-lg bg-transparent"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl sm:rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-rose-500 text-lg bg-transparent"
                 />
               </div>
               <button
                 onClick={handleSearch}
-                className="bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold whitespace-nowrap shadow-lg hover:shadow-xl"
+                className="bg-rose-500 text-white px-8 py-4 rounded-xl sm:rounded-full hover:bg-rose-600 transition font-semibold whitespace-nowrap shadow-lg hover:shadow-xl w-full sm:w-auto"
               >
                 Find Doctors
               </button>
