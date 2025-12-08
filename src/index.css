@@ -19,3 +19,14 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* Responsive hero image positioning */
+:root {
+  --hero-image-position: 20% 25%;
+}
+
+@media (max-width: 640px) {
+  :root {
+    --hero-image-position: 80% 25%;
+  }
+}

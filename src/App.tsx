@@ -120,7 +120,7 @@ export default function LuvHealthWebsite() {
             className="brightness-90"
             style={{
               objectFit: 'cover',
-              objectPosition: '20% 25%',
+              objectPosition: 'var(--hero-image-position)',
               width: '100%',
               height: '100%',
               minWidth: '100%',
@@ -129,7 +129,7 @@ export default function LuvHealthWebsite() {
               top: 0,
               left: 0,
               transform: 'scale(1.2)',
-              transformOrigin: '20% 25%',
+              transformOrigin: 'var(--hero-image-position)',
               display: 'block'
             }}
           />
