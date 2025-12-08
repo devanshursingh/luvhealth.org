@@ -119,7 +119,7 @@ export default function LuvHealthWebsite() {
             backgroundImage: `url(${doctorPatientImg})`,
             filter: 'brightness(0.9)',
             backgroundSize: '120%',
-            backgroundPosition: '5% 25%'
+            backgroundPosition: '20% 25%'
           }}
         />
         
