@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Calendar, CreditCard, UserPlus, Menu, X } from 'lucide-react';
-import doctorPatientImg from './assets/doctor-patient.png';
+import doctorPatientImg from './assets/hero_background.png';
 
 function Logo({ size = 40, showText = true }) {
   return (
