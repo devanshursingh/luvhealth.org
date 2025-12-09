@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Calendar, CreditCard, UserPlus, Menu, X, Users, DollarSign } from 'lucide-react';
+import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
 
 function Logo({ size = 40, showText = true }) {
@@ -65,6 +65,9 @@ export default function LuvHealthWebsite() {
               <a href="#for-providers" className="text-gray-700 hover:text-rose-500 transition">
                 For Providers
               </a>
+              <a href="#about-us" className="text-gray-700 hover:text-rose-500 transition">
+                About Us
+              </a>
               <a href="#login" className="text-gray-700 hover:text-rose-500 transition">
                 Log In
               </a>
@@ -95,6 +98,9 @@ export default function LuvHealthWebsite() {
               </a>
               <a href="#for-providers" className="block text-gray-700 hover:text-rose-500">
                 For Providers
+              </a>
+              <a href="#about-us" className="block text-gray-700 hover:text-rose-500">
+                About Us
               </a>
               <a href="#login" className="block text-gray-700 hover:text-rose-500">
                 Log In
@@ -179,6 +185,15 @@ export default function LuvHealthWebsite() {
             How It Works
           </h2>
 
+          <div className="text-center mb-12">
+            <a 
+              href="#signup"
+              className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
+            >
+              Find Bookings Now
+            </a>
+          </div>
+
           <div className="grid md:grid-cols-2 gap-12">
             {/* Step 1 */}
             <div className="flex gap-6">
@@ -192,7 +207,7 @@ export default function LuvHealthWebsite() {
                   Book ASAP Appointments
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Find ASAP appointments with doctors who prioritize quality over quantity.
+                  Find ASAP appointments with doctors who prioritize quality over quantity
                 </p>
               </div>
             </div>
@@ -209,7 +224,7 @@ export default function LuvHealthWebsite() {
                   Search High-Quality Doctors
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Find doctors who take a genuine interest in your health.
+                  Find doctors who take a genuine interest in your health
                 </p>
               </div>
             </div>
@@ -218,7 +233,7 @@ export default function LuvHealthWebsite() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <CreditCard className="w-6 h-6 text-rose-500" />
+                  <Heart className="w-6 h-6 text-rose-500" />
                 </div>
               </div>
               <div>
@@ -226,7 +241,7 @@ export default function LuvHealthWebsite() {
                   Your Choice
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Pick the right doctor for you, not just the ones your insurance approves.
+                  Pick the right doctor for you, not just the ones your insurance approves
                 </p>
               </div>
             </div>
@@ -235,18 +250,7 @@ export default function LuvHealthWebsite() {
             <div className="flex gap-6">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 100 100"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M50 85 L25 60 C20 55 17 48 17 42 C17 32 24 25 33 25 C38 25 43 27 46 31 L50 35 L54 31 C57 27 62 25 67 25 C76 25 83 32 83 42 C83 48 80 55 75 60 L50 85 Z"
-                      fill="#da2576"
-                    />
-                  </svg>
+                  <CreditCard className="w-6 h-6 text-rose-500" />
                 </div>
               </div>
               <div>
@@ -254,19 +258,10 @@ export default function LuvHealthWebsite() {
                   Book and Pay Online Instantly
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care.
+                  No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care
                 </p>
               </div>
             </div>
-          </div>
-
-          <div className="text-center mt-16">
-            <a 
-              href="#signup"
-              className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
-            >
-              Get Started as a Patient
-            </a>
           </div>
         </div>
       </section>
@@ -279,11 +274,19 @@ export default function LuvHealthWebsite() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               For Providers
             </h2>
+            <div className="mb-8">
+              <a 
+                href="#provider-signup"
+                className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
+              >
+                Join Our Platform
+              </a>
+            </div>
             <p className="text-xl text-gray-600 mb-8">
-              How Providers Can Join Us!
+              Grow Your Practice with Self-Paying Patients!
             </p>
             <p className="text-gray-600 mb-8 text-lg">
-              Join our network of quality-focused healthcare providers and connect with patients who value personalized care
+              Join our platform to connect with self-paying patients who value personalized care
             </p>
 
             {/* Provider Benefits */}
@@ -317,19 +320,92 @@ export default function LuvHealthWebsite() {
                     'As low as' Pricing
                   </h3>
                   <p className="text-gray-600 text-lg">
-                    List your visits with 'as low as' pricing and create multiple tiers for different offerings
+                    Retain ownership over your prices with the 'as low as' disclaimer for your visits.
+                  </p>
+                </div>
+              </div>
+
+              {/* Benefit 3 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <ShieldOff className="w-6 h-6 text-rose-500" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    Reduce Insurance Reliance
+                  </h3>
+                  <p className="text-gray-600 text-lg">
+                    Wean your practice off insurance contracts that pay less and less and reduce care quality
+                  </p>
+                </div>
+              </div>
+
+              {/* Benefit 4 */}
+              <div className="flex gap-6">
+                <div className="flex-shrink-0">
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <CalendarCheck className="w-6 h-6 text-rose-500" />
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                    Integrate Calendar and Payments
+                  </h3>
+                  <p className="text-gray-600 text-lg">
+                    Book a demo for seamless calendar integration and payments
                   </p>
                 </div>
               </div>
             </div>
 
-            <a 
-              href="#provider-signup"
-              className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
-            >
-              Provider Sign Up
-            </a>
+            {/* FAQs Button */}
+            <div className="text-center mt-12">
+              <a 
+                href="#faqs"
+                className="inline-block text-rose-500 hover:text-rose-600 transition font-semibold text-lg underline"
+              >
+                FAQs
+              </a>
+            </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQs Section */}
+      <section id="faqs" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-6">
+            {/* FAQ Item */}
+            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                Am I exposing myself to antitrust liability?
+              </h3>
+              <p className="text-gray-600 text-lg">
+                No. Our platform facilitates direct patient-provider relationships and does not involve price-fixing or market allocation agreements. Providers set their own prices independently, and patients choose providers based on their preferences. This model is compliant with antitrust laws as it promotes competition rather than restricting it.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about-us" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            About Us
+          </h2>
+          <p className="text-2xl font-semibold text-gray-700 mb-6">
+            Expanding healthcare choices for patients and providers.
+          </p>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            At Luv Health, we believe that quality healthcare should be accessible, transparent, and patient-centered. Our platform connects patients with high-quality healthcare providers who prioritize personalized care, while giving providers the tools they need to build sustainable practices focused on patient outcomes rather than insurance constraints.
+          </p>
         </div>
       </section>
 
