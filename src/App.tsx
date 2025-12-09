@@ -189,10 +189,10 @@ export default function LuvHealthWebsite() {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Search Quality Doctors
+                  Book ASAP Appointments
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Search hard-to-find LA doctors with private practices who emphasize quality over quantity
+                  Find ASAP appointments with doctors who prioritize quality over quantity.
                 </p>
               </div>
             </div>
@@ -206,10 +206,10 @@ export default function LuvHealthWebsite() {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Book Online Instantly
+                  Search High-Quality Doctors
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  No phone calls needed. Book appointments directly through our platform at your convenience
+                  Find doctors who take a genuine interest in your health.
                 </p>
               </div>
             </div>
@@ -223,10 +223,10 @@ export default function LuvHealthWebsite() {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Simple Payment
+                  Your Choice
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Pay online for ASAP visit, reimburse with superbill later
+                  Pick the right doctor for you, not just the ones your insurance approves.
                 </p>
               </div>
             </div>
@@ -251,10 +251,10 @@ export default function LuvHealthWebsite() {
               </div>
               <div>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Get Quality Care
+                  Book and Pay Online Instantly
                 </h3>
                 <p className="text-gray-600 text-lg">
-                  Experience personalized care from doctors who prioritize your health and wellbeing
+                  No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care.
                 </p>
               </div>
             </div>
