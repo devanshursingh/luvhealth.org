@@ -85,7 +85,9 @@ export default function LuvHealthWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <Logo size={32} showText={true} />
+            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="cursor-pointer">
+              <Logo size={32} showText={true} />
+            </a>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -489,7 +491,9 @@ export default function LuvHealthWebsite() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <Logo size={50} showText={true} />
+              <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="cursor-pointer inline-block">
+                <Logo size={50} showText={true} />
+              </a>
               <p className="text-gray-400 mt-4">
                 Expanding healthcare choices, one appointment at a time
               </p>
