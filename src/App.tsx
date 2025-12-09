@@ -98,9 +98,6 @@ export default function LuvHealthWebsite() {
               <a href="#about-us" className="text-gray-700 hover:text-rose-500 transition">
                 About Us
               </a>
-              <a href="#faqs" className="text-gray-700 hover:text-rose-500 transition">
-                FAQs
-              </a>
               <a href="#login" className="text-gray-700 hover:text-rose-500 transition">
                 Log In
               </a>
@@ -134,9 +131,6 @@ export default function LuvHealthWebsite() {
               </a>
               <a href="#about-us" className="block text-gray-700 hover:text-rose-500">
                 About Us
-              </a>
-              <a href="#faqs" className="block text-gray-700 hover:text-rose-500">
-                FAQs
               </a>
               <a href="#login" className="block text-gray-700 hover:text-rose-500">
                 Log In
@@ -423,8 +417,7 @@ export default function LuvHealthWebsite() {
                 Am I exposing myself to antitrust liability?
               </h3>
               <p className="text-gray-600 text-lg">
-                CHANGE THIS, FILLER
-                No. Our platform facilitates direct patient-provider relationships and does not involve price-fixing or market allocation agreements. Providers set their own prices independently, and patients choose providers based on their preferences. This model is compliant with antitrust laws as it promotes competition rather than restricting it.
+                No.
               </p>
             </div>
           </div>
@@ -442,9 +435,7 @@ export default function LuvHealthWebsite() {
               Expanding healthcare choices for patients and providers.
             </p>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              CHANGE THIS, FILLER
               Our mission is to bring the power of making healthcare choices back into the hands of patients and their doctors.
-              At Luv Health, we believe that quality healthcare should be accessible, transparent, and patient-centered. Our platform connects patients with high-quality healthcare providers who prioritize personalized care, while giving providers the tools they need to build sustainable practices focused on patient outcomes rather than insurance constraints.
             </p>
           </div>
 
