@@ -98,6 +98,9 @@ export default function LuvHealthWebsite() {
               <a href="#about-us" className="text-gray-700 hover:text-rose-500 transition">
                 About Us
               </a>
+              <a href="#faqs" className="text-gray-700 hover:text-rose-500 transition">
+                FAQs
+              </a>
               <a href="#login" className="text-gray-700 hover:text-rose-500 transition">
                 Log In
               </a>
@@ -131,6 +134,9 @@ export default function LuvHealthWebsite() {
               </a>
               <a href="#about-us" className="block text-gray-700 hover:text-rose-500">
                 About Us
+              </a>
+              <a href="#faqs" className="block text-gray-700 hover:text-rose-500">
+                FAQs
               </a>
               <a href="#login" className="block text-gray-700 hover:text-rose-500">
                 Log In
