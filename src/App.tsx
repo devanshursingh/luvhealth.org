@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
-import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
+import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck, Linkedin } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
+import devanshuPhoto from './assets/0b9bf62f4bbf6d17d9b64af8a00f57f76d9a7f7b.png';
+import divyanshPhoto from './assets/948fe3bdbd94ab8d333035ceffc4e0884e82054e.png';
+import srikanthPhoto from './assets/5629bb49a580382f9f44d0885caef801b0de6dfc.png';
 
 function Logo({ size = 40, showText = true }) {
   return (
@@ -39,6 +42,33 @@ function Logo({ size = 40, showText = true }) {
     </div>
   );
 }
+
+const team = [
+  {
+    name: "Devanshu Singh",
+    title: "Co-Founder, Luv Health Inc.",
+    credentials: "PhD Candidate at University of Washington in Political Science",
+    bio: "After a recent major illness, Devanshu is setting out to create new options for patients and doctors. He combines an AI background with research expertise in political science. He also comes from a family of doctors. He has grown up around the healthcare system and knows the frustrations of doctors and patients.",
+    linkedin: "https://www.linkedin.com/in/dsingh33",
+    photo: devanshuPhoto,
+  },
+  {
+    name: "Divyansh Khare",
+    title: "Co-Founder, Luv Health Inc.",
+    credentials: "Ex-Software Engineer at Union Pacific Railroad Company",
+    bio: "Divyansh is an experienced Full Stack developer with history building high performing and scalable enterprise applications and services. He wants to build something great.",
+    linkedin: "https://www.linkedin.com/in/divyansh-khare/",
+    photo: divyanshPhoto,
+  },
+  {
+    name: "Srikanth Bangalore",
+    title: "Advisor",
+    credentials: "Ex-Yahoo, Ex-Intuit Credit Karma Software Engineer",
+    bio: "Srikanth is a Staff-level Software Engineer with 25+ years of experience designing, scaling, and simplifying distributed backend systems across ad-tech, fintech, and 3D real-estate technology. He wants to build community using his background.",
+    linkedin: "https://www.linkedin.com/in/srikanth-bangalore/",
+    photo: srikanthPhoto,
+  },
+];
 
 export default function LuvHealthWebsite() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -274,6 +304,9 @@ export default function LuvHealthWebsite() {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               For Providers
             </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Grow Your Practice with Self-Paying Patients!
+            </p>
             <div className="mb-8">
               <a 
                 href="#provider-signup"
@@ -282,9 +315,6 @@ export default function LuvHealthWebsite() {
                 Join Our Platform
               </a>
             </div>
-            <p className="text-xl text-gray-600 mb-8">
-              Grow Your Practice with Self-Paying Patients!
-            </p>
             <p className="text-gray-600 mb-8 text-lg">
               Join our platform to connect with self-paying patients who value personalized care
             </p>
@@ -354,7 +384,7 @@ export default function LuvHealthWebsite() {
                     Integrate Calendar and Payments
                   </h3>
                   <p className="text-gray-600 text-lg">
-                    Book a demo for seamless calendar integration and payments
+                    Sign up and book a demo for seamless calendar integration and payments
                   </p>
                 </div>
               </div>
@@ -364,7 +394,7 @@ export default function LuvHealthWebsite() {
             <div className="text-center mt-12">
               <a 
                 href="#faqs"
-                className="inline-block text-rose-500 hover:text-rose-600 transition font-semibold text-lg underline"
+                className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-rose-500 hover:text-white transition font-semibold text-lg"
               >
                 FAQs
               </a>
@@ -387,6 +417,7 @@ export default function LuvHealthWebsite() {
                 Am I exposing myself to antitrust liability?
               </h3>
               <p className="text-gray-600 text-lg">
+                CHANGE THIS, FILLER
                 No. Our platform facilitates direct patient-provider relationships and does not involve price-fixing or market allocation agreements. Providers set their own prices independently, and patients choose providers based on their preferences. This model is compliant with antitrust laws as it promotes competition rather than restricting it.
               </p>
             </div>
@@ -396,16 +427,63 @@ export default function LuvHealthWebsite() {
 
       {/* About Us Section */}
       <section id="about-us" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">
-            About Us
-          </h2>
-          <p className="text-2xl font-semibold text-gray-700 mb-6">
-            Expanding healthcare choices for patients and providers.
-          </p>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            At Luv Health, we believe that quality healthcare should be accessible, transparent, and patient-centered. Our platform connects patients with high-quality healthcare providers who prioritize personalized care, while giving providers the tools they need to build sustainable practices focused on patient outcomes rather than insurance constraints.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+              About Us
+            </h2>
+            <p className="text-2xl font-semibold text-gray-700 mb-6">
+              Expanding healthcare choices for patients and providers.
+            </p>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              CHANGE THIS, FILLER
+              Our mission is to bring the power of making healthcare choices back into the hands of patients and their doctors.
+              At Luv Health, we believe that quality healthcare should be accessible, transparent, and patient-centered. Our platform connects patients with high-quality healthcare providers who prioritize personalized care, while giving providers the tools they need to build sustainable practices focused on patient outcomes rather than insurance constraints.
+            </p>
+          </div>
+
+          {/* Team Section */}
+          <div className="space-y-8">
+            {team.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-rose-100"
+              >
+                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
+                  <div className="flex-shrink-0">
+                    <div className="w-40 h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-rose-100 to-rose-200 shadow-md">
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div className="flex-1 text-center md:text-left">
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
+                      <div>
+                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+                        <p className="text-rose-600 mb-2 font-medium">{member.title}</p>
+                        <p className="text-gray-600">{member.credentials}</p>
+                      </div>
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-rose-600 hover:text-rose-700 transition-colors inline-flex items-center justify-center w-12 h-12 bg-rose-50 rounded-xl hover:bg-rose-100"
+                        >
+                          <Linkedin className="w-6 h-6" />
+                        </a>
+                      )}
+                    </div>
+                    <p className="text-gray-700 leading-relaxed">{member.bio}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -416,7 +494,7 @@ export default function LuvHealthWebsite() {
             <div>
               <Logo size={50} showText={true} />
               <p className="text-gray-400 mt-4">
-                Making healthcare accessible, one appointment at a time
+                Expanding healthcare choices, one appointment at a time
               </p>
             </div>
             
