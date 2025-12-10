@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Search, Calendar, Heart, CreditCard, UserPlus, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
+import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
-import Layout from './components/Layout';
+import Logo from './components/Logo';
 import PatientFAQs from './pages/PatientFAQs';
 import ProviderFAQs from './pages/ProviderFAQs';
 import AboutUs from './pages/AboutUs';
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
@@ -18,7 +16,74 @@ function HomePage() {
   };
 
   return (
-    <Layout>
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed w-full bg-white shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            {/* Logo */}
+            <Link to="/" className="cursor-pointer">
+              <Logo size={32} showText={true} />
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              <a href="#how-it-works" className="text-gray-700 hover:text-rose-500 transition">
+                How It Works
+              </a>
+              <a href="#for-providers" className="text-gray-700 hover:text-rose-500 transition">
+                For Providers
+              </a>
+              <Link to="/about-us" className="text-gray-700 hover:text-rose-500 transition">
+                About Us
+              </Link>
+              <a href="#login" className="text-gray-700 hover:text-rose-500 transition">
+                Log In
+              </a>
+              <a 
+                href="#signup" 
+                className="bg-rose-500 text-white px-6 py-2 rounded-full hover:bg-rose-600 transition"
+              >
+                Sign Up
+              </a>
+            </div>
+
+            {/* Mobile menu button */}
+            <button 
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-white border-t">
+            <div className="px-4 py-4 space-y-4">
+              <a href="#how-it-works" className="block text-gray-700 hover:text-rose-500">
+                How It Works
+              </a>
+              <a href="#for-providers" className="block text-gray-700 hover:text-rose-500">
+                For Providers
+              </a>
+              <Link to="/about-us" className="block text-gray-700 hover:text-rose-500">
+                About Us
+              </Link>
+              <a href="#login" className="block text-gray-700 hover:text-rose-500">
+                Log In
+              </a>
+              <a 
+                href="#signup" 
+                className="block bg-rose-500 text-white px-6 py-2 rounded-full text-center hover:bg-rose-600"
+              >
+                Sign Up
+              </a>
+            </div>
+          </div>
+        )}
+      </nav>
 
       {/* Hero Section */}
       <section className="relative pt-40 pb-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
@@ -98,86 +163,74 @@ function HomePage() {
             </a>
           </div>
 
-          {/* Carousel Container */}
-          <div className="max-w-2xl mx-auto">
-            <Slider
-              dots={true}
-              infinite={true}
-              speed={500}
-              slidesToShow={1}
-              slidesToScroll={1}
-              autoplay={true}
-              autoplaySpeed={4000}
-              arrows={true}
-              responsive={[
-                {
-                  breakpoint: 768,
-                  settings: {
-                    arrows: false,
-                  }
-                }
-              ]}
-            >
-              {/* Slide 1 */}
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Search className="w-8 h-8 text-rose-500" />
-                  </div>
-                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
-                    Book ASAP Appointments
-                  </h3>
-                  <p className="text-gray-600 text-xl">
-                    Find ASAP appointments with doctors who prioritize quality over quantity
-                  </p>
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Step 1 */}
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <Search className="w-6 h-6 text-rose-500" />
                 </div>
               </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  Book ASAP Appointments
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Find ASAP appointments with doctors who prioritize quality over quantity
+                </p>
+              </div>
+            </div>
 
-              {/* Slide 2 */}
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Calendar className="w-8 h-8 text-rose-500" />
-                  </div>
-                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
-                    Search High-Quality Doctors
-                  </h3>
-                  <p className="text-gray-600 text-xl">
-                    Find doctors who take a genuine interest in your health
-                  </p>
+            {/* Step 2 */}
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-rose-500" />
                 </div>
               </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  Search High-Quality Doctors
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Find doctors who take a genuine interest in your health
+                </p>
+              </div>
+            </div>
 
-              {/* Slide 3 */}
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Heart className="w-8 h-8 text-rose-500" />
-                  </div>
-                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
-                    Your Choice
-                  </h3>
-                  <p className="text-gray-600 text-xl">
-                    Pick the right doctor for you, not just the ones your insurance approves
-                  </p>
+            {/* Step 3 */}
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-rose-500" />
                 </div>
               </div>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  Your Choice
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  Pick the right doctor for you, not just the ones your insurance approves
+                </p>
+              </div>
+            </div>
 
-              {/* Slide 4 */}
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CreditCard className="w-8 h-8 text-rose-500" />
-                  </div>
-                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
-                    Book and Pay Online Instantly
-                  </h3>
-                  <p className="text-gray-600 text-xl">
-                    No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care
-                  </p>
+            {/* Step 4 */}
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <CreditCard className="w-6 h-6 text-rose-500" />
                 </div>
               </div>
-            </Slider>
+              <div>
+                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
+                  Book and Pay Online Instantly
+                </h3>
+                <p className="text-gray-600 text-lg">
+                  No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* FAQs Button */}
@@ -298,7 +351,44 @@ function HomePage() {
           </div>
         </div>
       </section>
-    </Layout>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <Link to="/" className="cursor-pointer inline-block">
+                <Logo size={50} showText={true} />
+              </Link>
+              <p className="text-gray-400 mt-4">
+                Expanding healthcare choices, one appointment at a time
+              </p>
+            </div>
+            
+            <div>
+              <h3 className="font-semibold mb-4">For Patients</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#signup" className="hover:text-white transition">Sign Up</a></li>
+                <li><a href="#how-it-works" className="hover:text-white transition">How It Works</a></li>
+                <li><a href="#login" className="hover:text-white transition">Log In</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-4">For Providers</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li><a href="#provider-signup" className="hover:text-white transition">Provider Sign Up</a></li>
+                <li><a href="#for-providers" className="hover:text-white transition">Learn More</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
+            <p>&copy; 2024 Luv Health. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
 

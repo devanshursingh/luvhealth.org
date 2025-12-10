@@ -1,9 +1,20 @@
 import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
+import Logo from '../components/Logo';
 
 export default function ProviderFAQs() {
   return (
-    <Layout>
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed w-full bg-white shadow-sm z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <Link to="/" className="cursor-pointer">
+              <Logo size={32} showText={true} />
+            </Link>
+          </div>
+        </div>
+      </nav>
+
       {/* Provider FAQs Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
@@ -33,7 +44,7 @@ export default function ProviderFAQs() {
           </div>
         </div>
       </section>
-    </Layout>
+    </div>
   );
 }
 
