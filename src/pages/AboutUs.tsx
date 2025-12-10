@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Linkedin } from 'lucide-react';
-import Logo from '../components/Logo';
+import Layout from '../components/Layout';
 import devanshuPhoto from '../assets/0b9bf62f4bbf6d17d9b64af8a00f57f76d9a7f7b.png';
 import divyanshPhoto from '../assets/948fe3bdbd94ab8d333035ceffc4e0884e82054e.png';
 import srikanthPhoto from '../assets/5629bb49a580382f9f44d0885caef801b0de6dfc.png';
@@ -34,18 +34,7 @@ const team = [
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link to="/" className="cursor-pointer">
-              <Logo size={32} showText={true} />
-            </Link>
-          </div>
-        </div>
-      </nav>
-
+    <Layout>
       {/* About Us Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
         <div className="max-w-6xl mx-auto">
@@ -114,7 +103,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 }
 
