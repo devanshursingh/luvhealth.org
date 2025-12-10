@@ -30,3 +30,27 @@ html {
     --hero-image-position: 80% 25%;
   }
 }
+
+/* Carousel customization */
+.slick-prev:before,
+.slick-next:before {
+  color: #f43f5e !important;
+  font-size: 30px;
+}
+
+.slick-dots li button:before {
+  color: #f43f5e !important;
+  font-size: 12px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #f43f5e !important;
+}
+
+.slick-prev {
+  left: -40px !important;
+}
+
+.slick-next {
+  right: -40px !important;
+}

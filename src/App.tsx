@@ -6,6 +6,9 @@ import Logo from './components/Logo';
 import PatientFAQs from './pages/PatientFAQs';
 import ProviderFAQs from './pages/ProviderFAQs';
 import AboutUs from './pages/AboutUs';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -163,74 +166,86 @@ function HomePage() {
             </a>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Step 1 */}
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <Search className="w-6 h-6 text-rose-500" />
+          {/* Carousel Container */}
+          <div className="max-w-2xl mx-auto">
+            <Slider
+              dots={true}
+              infinite={true}
+              speed={500}
+              slidesToShow={1}
+              slidesToScroll={1}
+              autoplay={true}
+              autoplaySpeed={4000}
+              arrows={true}
+              responsive={[
+                {
+                  breakpoint: 768,
+                  settings: {
+                    arrows: false,
+                  }
+                }
+              ]}
+            >
+              {/* Slide 1 */}
+              <div className="px-4">
+                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Search className="w-8 h-8 text-rose-500" />
+                  </div>
+                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                    Book ASAP Appointments
+                  </h3>
+                  <p className="text-gray-600 text-xl">
+                    Find ASAP appointments with doctors who prioritize quality over quantity
+                  </p>
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Book ASAP Appointments
-                </h3>
-                <p className="text-gray-600 text-lg">
-                  Find ASAP appointments with doctors who prioritize quality over quantity
-                </p>
-              </div>
-            </div>
 
-            {/* Step 2 */}
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <Calendar className="w-6 h-6 text-rose-500" />
+              {/* Slide 2 */}
+              <div className="px-4">
+                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Calendar className="w-8 h-8 text-rose-500" />
+                  </div>
+                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                    Search High-Quality Doctors
+                  </h3>
+                  <p className="text-gray-600 text-xl">
+                    Find doctors who take a genuine interest in your health
+                  </p>
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Search High-Quality Doctors
-                </h3>
-                <p className="text-gray-600 text-lg">
-                  Find doctors who take a genuine interest in your health
-                </p>
-              </div>
-            </div>
 
-            {/* Step 3 */}
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-rose-500" />
+              {/* Slide 3 */}
+              <div className="px-4">
+                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <Heart className="w-8 h-8 text-rose-500" />
+                  </div>
+                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                    Your Choice
+                  </h3>
+                  <p className="text-gray-600 text-xl">
+                    Pick the right doctor for you, not just the ones your insurance approves
+                  </p>
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Your Choice
-                </h3>
-                <p className="text-gray-600 text-lg">
-                  Pick the right doctor for you, not just the ones your insurance approves
-                </p>
-              </div>
-            </div>
 
-            {/* Step 4 */}
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <CreditCard className="w-6 h-6 text-rose-500" />
+              {/* Slide 4 */}
+              <div className="px-4">
+                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
+                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CreditCard className="w-8 h-8 text-rose-500" />
+                  </div>
+                  <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                    Book and Pay Online Instantly
+                  </h3>
+                  <p className="text-gray-600 text-xl">
+                    No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care
+                  </p>
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-3">
-                  Book and Pay Online Instantly
-                </h3>
-                <p className="text-gray-600 text-lg">
-                  No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care
-                </p>
-              </div>
-            </div>
+            </Slider>
           </div>
 
           {/* FAQs Button */}
