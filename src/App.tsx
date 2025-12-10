@@ -1,76 +1,13 @@
-import React, { useState } from 'react';
-import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck, Linkedin } from 'lucide-react';
+import { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
-import devanshuPhoto from './assets/0b9bf62f4bbf6d17d9b64af8a00f57f76d9a7f7b.png';
-import divyanshPhoto from './assets/948fe3bdbd94ab8d333035ceffc4e0884e82054e.png';
-import srikanthPhoto from './assets/5629bb49a580382f9f44d0885caef801b0de6dfc.png';
+import Logo from './components/Logo';
+import PatientFAQs from './pages/PatientFAQs';
+import ProviderFAQs from './pages/ProviderFAQs';
+import AboutUs from './pages/AboutUs';
 
-function Logo({ size = 40, showText = true }) {
-  return (
-    <div className="flex items-center gap-3">
-      <svg
-        width={size}
-        height={size}
-        viewBox="0 0 100 100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="transition-transform hover:scale-110"
-      >
-        <path
-          d="M50 85 L25 60 C20 55 17 48 17 42 C17 32 24 25 33 25 C38 25 43 27 46 31 L50 35 L54 31 C57 27 62 25 67 25 C76 25 83 32 83 42 C83 48 80 55 75 60 L50 85 Z"
-          fill="#f43f5e"
-        />
-        <g
-          fill="white"
-          fillRule="evenodd"
-          stroke="#f43f5e"
-          strokeWidth="2"
-          transform="translate(50, 55) scale(0.45) translate(-96, -97)"
-        >
-          <path d="m 93,166 c 0,7 6,7 6,0 l 3,-138 c 0,-8 -12,-8 -12,0 l 3,135 0,3 z"/>
-          <g>
-            <path d="m 100,153 c 7,4 3,15 -3,15 2,-5 3,-9 3,-15 z m 1,-40 c 10,9 4,22 -3,26 -6,3 -6,7 -6,15 -9,-10 -4,-19 4,-24 5,-4 5,-10 5,-17 z m 1,-30 c 0,11 -17,14 -17,22 0,3 1,9 6,12 0,-11 9,-12 15,-18 7,-7 7,-19 -4,-28 0,4 0,8 0,12 z M 90,77 C 80,69 76,55 80,46 c 3,-10 20,-11 20,-3 0,8 -20,3 -13,16 l 3,5 0,13 z"/>
-            <path d="m 95,43 c 7,-3 -7,-3 0,0 z" fill="#f43f5e" fillRule="evenodd" stroke="none"/>
-          </g>
-        </g>
-      </svg>
-      {showText && (
-        <span className="text-2xl font-semibold" style={{ color: '#f43f5e' }}>
-          luv health
-        </span>
-      )}
-    </div>
-  );
-}
-
-const team = [
-  {
-    name: "Devanshu Singh",
-    title: "Co-Founder, Luv Health Inc.",
-    credentials: "PhD Candidate at University of Washington in Political Science",
-    bio: "After a recent major illness, Devanshu is setting out to create new options for patients and doctors. He combines an AI background with research expertise in political science. He also comes from a family of doctors. He has grown up around the healthcare system and knows the frustrations of doctors and patients.",
-    linkedin: "https://www.linkedin.com/in/dsingh33",
-    photo: devanshuPhoto,
-  },
-  {
-    name: "Divyansh Khare",
-    title: "Co-Founder, Luv Health Inc.",
-    credentials: "Ex-Software Engineer at Union Pacific Railroad Company",
-    bio: "Divyansh is an experienced Full Stack developer with history building high performing and scalable enterprise applications and services. He wants to build something great.",
-    linkedin: "https://www.linkedin.com/in/divyansh-khare/",
-    photo: divyanshPhoto,
-  },
-  {
-    name: "Srikanth Bangalore",
-    title: "Advisor",
-    credentials: "Ex-Yahoo, Ex-Intuit Credit Karma Software Engineer",
-    bio: "Srikanth is a Staff-level Software Engineer with 25+ years of experience designing, scaling, and simplifying distributed backend systems across ad-tech, fintech, and 3D real-estate technology. He wants to build community using his background.",
-    linkedin: "https://www.linkedin.com/in/srikanth-bangalore/",
-    photo: srikanthPhoto,
-  },
-];
-
-export default function LuvHealthWebsite() {
+function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -85,9 +22,9 @@ export default function LuvHealthWebsite() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
-            <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="cursor-pointer">
+            <Link to="/" className="cursor-pointer">
               <Logo size={32} showText={true} />
-            </a>
+            </Link>
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
@@ -97,9 +34,9 @@ export default function LuvHealthWebsite() {
               <a href="#for-providers" className="text-gray-700 hover:text-rose-500 transition">
                 For Providers
               </a>
-              <a href="#about-us" className="text-gray-700 hover:text-rose-500 transition">
+              <Link to="/about-us" className="text-gray-700 hover:text-rose-500 transition">
                 About Us
-              </a>
+              </Link>
               <a href="#login" className="text-gray-700 hover:text-rose-500 transition">
                 Log In
               </a>
@@ -131,9 +68,9 @@ export default function LuvHealthWebsite() {
               <a href="#for-providers" className="block text-gray-700 hover:text-rose-500">
                 For Providers
               </a>
-              <a href="#about-us" className="block text-gray-700 hover:text-rose-500">
+              <Link to="/about-us" className="block text-gray-700 hover:text-rose-500">
                 About Us
-              </a>
+              </Link>
               <a href="#login" className="block text-gray-700 hover:text-rose-500">
                 Log In
               </a>
@@ -295,6 +232,16 @@ export default function LuvHealthWebsite() {
               </div>
             </div>
           </div>
+
+          {/* FAQs Button */}
+          <div className="text-center mt-16">
+            <Link 
+              to="/patient-faqs"
+              className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-rose-500 hover:text-white transition font-semibold text-lg"
+            >
+              FAQs
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -394,94 +341,13 @@ export default function LuvHealthWebsite() {
 
             {/* FAQs Button */}
             <div className="text-center mt-12">
-              <a 
-                href="#faqs"
+              <Link 
+                to="/provider-faqs"
                 className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-rose-500 hover:text-white transition font-semibold text-lg"
               >
                 FAQs
-              </a>
+              </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQs Section */}
-      <section id="faqs" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
-            Frequently Asked Questions
-          </h2>
-
-          <div className="space-y-6">
-            {/* FAQ Item */}
-            <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Am I exposing myself to antitrust liability?
-              </h3>
-              <p className="text-gray-600 text-lg">
-                No.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* About Us Section */}
-      <section id="about-us" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
-              About Us
-            </h2>
-            <p className="text-2xl font-semibold text-gray-700 mb-6">
-              Expanding healthcare choices for patients and providers.
-            </p>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Our mission is to bring the power of making healthcare choices back into the hands of patients and their doctors.
-            </p>
-          </div>
-
-          {/* Team Section */}
-          <div className="space-y-8">
-            {team.map((member, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all border border-rose-100"
-              >
-                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start">
-                  <div className="flex-shrink-0">
-                    <div className="w-40 h-40 rounded-2xl overflow-hidden bg-gradient-to-br from-rose-100 to-rose-200 shadow-md">
-                      <img
-                        src={member.photo}
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                  
-                  <div className="flex-1 text-center md:text-left">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                      <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                        <p className="text-rose-600 mb-2 font-medium">{member.title}</p>
-                        <p className="text-gray-600">{member.credentials}</p>
-                      </div>
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-rose-600 hover:text-rose-700 transition-colors inline-flex items-center justify-center w-12 h-12 bg-rose-50 rounded-xl hover:bg-rose-100"
-                        >
-                          <Linkedin className="w-6 h-6" />
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-gray-700 leading-relaxed">{member.bio}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -491,9 +357,9 @@ export default function LuvHealthWebsite() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="cursor-pointer inline-block">
+              <Link to="/" className="cursor-pointer inline-block">
                 <Logo size={50} showText={true} />
-              </a>
+              </Link>
               <p className="text-gray-400 mt-4">
                 Expanding healthcare choices, one appointment at a time
               </p>
@@ -523,5 +389,16 @@ export default function LuvHealthWebsite() {
         </div>
       </footer>
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/patient-faqs" element={<PatientFAQs />} />
+      <Route path="/provider-faqs" element={<ProviderFAQs />} />
+      <Route path="/about-us" element={<AboutUs />} />
+    </Routes>
   );
 }
