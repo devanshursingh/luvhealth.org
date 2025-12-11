@@ -197,7 +197,7 @@ function HomePage() {
                   Book ASAP Appointments
                 </h3>
                 <p className="text-gray-600 text-xl">
-                  Find ASAP appointments with doctors who prioritize quality over quantity
+                  Find appointments quickly with doctors who prioritize quality over quantity
                 </p>
               </div>
             </div>
@@ -239,10 +239,10 @@ function HomePage() {
                   <CreditCard className="w-8 h-8 text-rose-500" />
                 </div>
                 <h3 className="text-3xl font-semibold text-gray-900 mb-4">
-                  Book and Pay Online Instantly
+                  Pay Online Instantly
                 </h3>
                 <p className="text-gray-600 text-xl">
-                  No phone calls required, no insurance hassles. Instant online bookings and simple online payments for more convenient, quality care
+                  No phone calls required, no insurance hassles. Instant online bookings and payments for convenient, quality care made simple
                 </p>
               </div>
             </div>
