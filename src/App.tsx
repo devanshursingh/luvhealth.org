@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
+import doctorImg from './assets/doctor.png';
 import Logo from './components/Logo';
 import PatientFAQs from './pages/PatientFAQs';
 import ProviderFAQs from './pages/ProviderFAQs';
@@ -261,9 +262,24 @@ function HomePage() {
       </section>
 
       {/* For Providers Section */}
-      <section id="for-providers" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
+      <section id="for-providers" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: `url(${doctorImg})`,
+            backgroundPosition: 'center center',
+            filter: 'brightness(0.6)'
+          }}
+        />
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        
+        {/* Content - Add relative positioning */}
+        <div className="relative max-w-4xl mx-auto text-center z-10">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="bg-white rounded-2xl shadow-lg p-12">
+          <div className="bg-white/50 backdrop-blur-sm rounded-2xl shadow-lg p-12">
             <UserPlus className="w-16 h-16 text-rose-500 mx-auto mb-6" />
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
               For Providers
@@ -364,6 +380,7 @@ function HomePage() {
               </Link>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
