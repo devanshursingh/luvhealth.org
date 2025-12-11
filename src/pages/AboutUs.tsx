@@ -18,7 +18,7 @@ const team = [
     name: "Divyansh Khare",
     title: "Co-Founder, Luv Health Inc.",
     credentials: "Ex-Software Engineer at Union Pacific Railroad Company",
-    bio: "Divyansh is an experienced Full Stack developer with history building high performing and scalable enterprise applications and services. His extensive knowledge of product-driven development paired with a drive to create the next advance in the technology space positions him to build solutions that are both visionary and deeply practical",
+    bio: "Divyansh is an experienced Full Stack developer with history building high performing and scalable enterprise applications and services. His extensive knowledge of product-driven development paired with a drive to create the next advance in the technology space positions him to build solutions that are both visionary and deeply practical.",
     linkedin: "https://www.linkedin.com/in/divyansh-khare/",
     photo: divyanshPhoto,
   },
