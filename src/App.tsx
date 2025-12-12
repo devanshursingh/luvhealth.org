@@ -282,7 +282,7 @@ function HomePage() {
         <div className="relative max-w-4xl mx-auto text-center z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-12">
-            <UserPlus className="w-16 h-16 text-rose-500 mx-auto mb-6" />
+            <UserPlus className="w-16 h-16 text-rose-300 mx-auto mb-6" />
             <h2 className="text-4xl font-bold text-gray-100 mb-4">
               For Providers
             </h2>
@@ -378,7 +378,7 @@ function HomePage() {
             <div className="text-center mt-12">
               <Link 
                 to="/provider-faqs"
-                className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-semibold text-lg"
+                className="inline-block border-2 border-rose-300 text-rose-300 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-semibold text-lg"
               >
                 FAQs
               </Link>
