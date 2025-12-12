@@ -157,13 +157,15 @@ function HomePage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             How It Works
           </h2>
-
+          <p className="text-xl text-gray-600 mb-8">
+              Don't Wait Months. Don't Wait on Hold.
+          </p>
           <div className="text-center mb-12">
             <a 
               href="#signup"
               className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
             >
-              Find Bookings Now
+              Find Bookings Now!
             </a>
           </div>
 
