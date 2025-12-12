@@ -14,7 +14,7 @@ export default function ProviderFAQs() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="cursor-pointer">
-              <Logo size={32} showText={true} />
+              <Logo size={48} showText={true} />
             </Link>
 
             {/* Desktop Navigation */}

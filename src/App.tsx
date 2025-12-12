@@ -27,7 +27,7 @@ function HomePage() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="cursor-pointer">
-              <Logo size={32} showText={true} />
+              <Logo size={48} showText={true} />
             </Link>
 
             {/* Desktop Navigation */}
@@ -394,7 +394,7 @@ function HomePage() {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <Link to="/" className="cursor-pointer inline-block">
-                <Logo size={50} showText={true} />
+                <Logo size={64} showText={true} />
               </Link>
               <p className="font-serif text-[18px] text-gray-400 mt-4 leading-[1.2]">
                 Expanding healthcare choices, one appointment at a time
