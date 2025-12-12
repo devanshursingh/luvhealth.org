@@ -289,10 +289,12 @@ function HomePage() {
             </p>
             <div className="mb-8">
               <a 
-                href="#provider-signup"
+                href="https://calendly.com/dsinghjhu2020/30min"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
               >
-                Join Our Platform
+                Book A Demo
               </a>
             </div>
             <p className="text-gray-600 mb-8 text-lg">
