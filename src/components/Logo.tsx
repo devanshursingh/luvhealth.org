@@ -38,3 +38,4 @@ function Logo({ size = 40, showText = true }) {
 
 export default Logo;
 
+
