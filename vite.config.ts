@@ -2,9 +2,60 @@
   import { defineConfig } from 'vite';
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
+  import { writeFileSync, readFileSync } from 'fs';
+  import { resolve } from 'path';
+
+  // Plugin to generate favicon from shared logo data
+  const faviconPlugin = () => {
+    const generateFavicon = () => {
+      try {
+        const logoPathsContent = readFileSync(resolve(__dirname, 'src/assets/logoPaths.ts'), 'utf-8');
+        // Extract the paths (simple regex extraction for build-time)
+        const heartMatch = logoPathsContent.match(/heart:\s*"([^"]+)"/);
+        const letterLMatch = logoPathsContent.match(/letterL:\s*"([^"]+)"/);
+        const letterUMatch = logoPathsContent.match(/letterU:\s*"([^"]+)"/);
+        const letterVMatch = logoPathsContent.match(/letterV:\s*"([^"]+)"/);
+        const transformMatch = logoPathsContent.match(/transform:\s*"([^"]+)"/);
+        
+        if (heartMatch && letterLMatch && letterUMatch && letterVMatch && transformMatch) {
+          const faviconSVG = `<svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="${heartMatch[1]}"
+    fill="#f43f5e"
+  />
+  <g
+    fill="white"
+    fillRule="evenodd"
+    stroke="#f43f5e"
+    strokeWidth="2"
+    transform="${transformMatch[1]}"
+  >
+    <path d="${letterLMatch[1]}"/>
+    <g>
+      <path d="${letterUMatch[1]}"/>
+      <path d="${letterVMatch[1]}" fill="#f43f5e" fillRule="evenodd" stroke="none"/>
+    </g>
+  </g>
+</svg>`;
+          writeFileSync(resolve(__dirname, 'public/favicon.svg'), faviconSVG);
+        }
+      } catch (error) {
+        console.warn('Could not generate favicon from logoPaths.ts:', error);
+      }
+    };
+
+    return {
+      name: 'generate-favicon',
+      buildStart: generateFavicon,
+      configureServer() {
+        // Also generate on dev server start
+        generateFavicon();
+      },
+    };
+  };
 
   export default defineConfig({
-    plugins: [react()],
+    plugins: [react(), faviconPlugin()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
       alias: {
