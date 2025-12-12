@@ -48,22 +48,22 @@ export default function AboutUs() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="/#how-it-works" className="text-gray-700 hover:text-rose-500 transition">
+            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
+              <a href="/#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="/#for-providers" className="text-secondary-text hover:text-ui-accent transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-gray-700 hover:text-rose-500 transition">
+              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="/#login" className="text-secondary-text hover:text-ui-accent transition">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="bg-rose-500 text-white px-6 py-2 rounded-full hover:bg-rose-600 transition"
+                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:opacity-90 transition font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -82,22 +82,22 @@ export default function AboutUs() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-4">
-              <a href="/#how-it-works" className="block text-gray-700 hover:text-rose-500">
+            <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
+              <a href="/#how-it-works" className="block text-secondary-text hover:text-ui-accent">
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-gray-700 hover:text-rose-500">
+              <a href="/#for-providers" className="block text-secondary-text hover:text-ui-accent">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-gray-700 hover:text-rose-500">
+              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
                 About Us
               </Link>
-              <a href="/#login" className="block text-gray-700 hover:text-rose-500">
+              <a href="/#login" className="block text-secondary-text hover:text-ui-accent">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="block bg-rose-500 text-white px-6 py-2 rounded-full text-center hover:bg-rose-600"
+                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:opacity-90 font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -110,13 +110,13 @@ export default function AboutUs() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">
+            <h2 className="font-sans text-[48px] font-semibold text-primary-text mb-8">
               About Us
             </h2>
-            <p className="text-2xl font-semibold text-gray-700 mb-6">
+            <p className="font-sans text-[32px] font-semibold text-primary-text mb-6">
               Expanding healthcare choices for patients and providers.
             </p>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="font-serif text-[18px] text-secondary-text max-w-2xl mx-auto leading-[1.2]">
               Our mission is to bring the power of making healthcare choices back into the hands of patients and their doctors.
             </p>
           </div>
@@ -142,22 +142,22 @@ export default function AboutUs() {
                   <div className="flex-1 text-center md:text-left">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                       <div>
-                        <h3 className="text-2xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                        <p className="text-rose-600 mb-2 font-medium">{member.title}</p>
-                        <p className="text-gray-600">{member.credentials}</p>
+                        <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-2">{member.name}</h3>
+                        <p className="text-ui-accent mb-2 font-sans font-medium text-[18px]">{member.title}</p>
+                        <p className="font-serif text-[18px] text-secondary-text">{member.credentials}</p>
                       </div>
                       {member.linkedin && (
                         <a
                           href={member.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-rose-600 hover:text-rose-700 transition-colors inline-flex items-center justify-center w-12 h-12 bg-rose-50 rounded-xl hover:bg-rose-100"
+                          className="text-ui-accent hover:opacity-80 transition-colors inline-flex items-center justify-center w-12 h-12 bg-blue-50 rounded-xl hover:bg-blue-100"
                         >
                           <Linkedin className="w-6 h-6" />
                         </a>
                       )}
                     </div>
-                    <p className="text-gray-700 leading-relaxed">{member.bio}</p>
+                    <p className="font-serif text-[18px] text-secondary-text leading-[1.2]">{member.bio}</p>
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@ export default function AboutUs() {
           <div className="text-center mt-12">
             <Link 
               to="/"
-              className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
+              className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:opacity-90 transition font-sans font-semibold text-[18px]"
             >
               Back to Home
             </Link>

@@ -28,7 +28,7 @@ function Logo({ size = 40, showText = true }) {
         </g>
       </svg>
       {showText && (
-        <span className="text-2xl font-semibold" style={{ color: '#f43f5e' }}>
+        <span className="font-sans text-2xl font-semibold" style={{ color: '#f43f5e' }}>
           luv health
         </span>
       )}

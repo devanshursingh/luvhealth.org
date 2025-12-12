@@ -31,22 +31,22 @@ function HomePage() {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#how-it-works" className="text-gray-700 hover:text-rose-500 transition">
+            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
+              <a href="#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
                 How It Works
               </a>
-              <a href="#for-providers" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="#for-providers" className="text-secondary-text hover:text-ui-accent transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-gray-700 hover:text-rose-500 transition">
+              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
                 About Us
               </Link>
-              <a href="#login" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="#login" className="text-secondary-text hover:text-ui-accent transition">
                 Log In
               </a>
               <a 
                 href="#signup" 
-                className="bg-rose-500 text-white px-6 py-2 rounded-full hover:bg-rose-600 transition"
+                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:opacity-90 transition font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -65,22 +65,22 @@ function HomePage() {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-4">
-              <a href="#how-it-works" className="block text-gray-700 hover:text-rose-500">
+            <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
+              <a href="#how-it-works" className="block text-secondary-text hover:text-ui-accent">
                 How It Works
               </a>
-              <a href="#for-providers" className="block text-gray-700 hover:text-rose-500">
+              <a href="#for-providers" className="block text-secondary-text hover:text-ui-accent">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-gray-700 hover:text-rose-500">
+              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
                 About Us
               </Link>
-              <a href="#login" className="block text-gray-700 hover:text-rose-500">
+              <a href="#login" className="block text-secondary-text hover:text-ui-accent">
                 Log In
               </a>
               <a 
                 href="#signup" 
-                className="block bg-rose-500 text-white px-6 py-2 rounded-full text-center hover:bg-rose-600"
+                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:opacity-90 font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -119,10 +119,10 @@ function HomePage() {
         
         {/* Content */}
         <div className="relative max-w-4xl mx-auto text-center z-10">
-          <h1 className="text-5xl sm:text-6xl font-bold text-white mb-6 drop-shadow-lg">
+          <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
             See Your Doctor Now,<br />No Phone Calls Required
           </h1>
-          <p className="text-xl text-white mb-12 drop-shadow-md">
+          <p className="font-serif text-[18px] text-white mb-12 drop-shadow-md leading-[1.2]">
             Book hard-to-find LA doctors online for faster appointments
           </p>
 
@@ -137,12 +137,12 @@ function HomePage() {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-                  className="w-full pl-12 pr-4 py-4 rounded-xl sm:rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-rose-500 text-lg bg-transparent"
+                  className="w-full pl-12 pr-4 py-4 rounded-xl sm:rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-ui-accent text-[18px] bg-transparent font-serif"
                 />
               </div>
               <button
                 onClick={handleSearch}
-                className="bg-rose-500 text-white px-8 py-4 rounded-xl sm:rounded-full hover:bg-rose-600 transition font-semibold whitespace-nowrap shadow-lg hover:shadow-xl w-full sm:w-auto"
+                className="bg-ui-accent text-white px-8 py-4 rounded-xl sm:rounded-full hover:opacity-90 transition font-sans font-semibold text-[18px] whitespace-nowrap shadow-lg hover:shadow-xl w-full sm:w-auto"
               >
                 Find Doctors
               </button>
@@ -154,16 +154,16 @@ function HomePage() {
       {/* How It Works Section */}
       <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+          <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-16">
             How It Works
           </h2>
-          <p className="text-xl text-gray-600 text-center mb-8">
+          <p className="font-serif text-[18px] text-secondary-text text-center mb-8 leading-[1.2]">
               Don't Wait Months. Don't Wait on Hold.
           </p>
           <div className="text-center mb-12">
             <a 
               href="#signup"
-              className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
+              className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:opacity-90 transition font-sans font-semibold text-[18px]"
             >
               Find Bookings Now!
             </a>
@@ -195,10 +195,10 @@ function HomePage() {
                 <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Search className="w-8 h-8 text-rose-500" />
                 </div>
-                <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
                   Book ASAP Appointments
                 </h3>
-                <p className="text-gray-600 text-xl">
+                <p className="font-serif text-[18px] text-secondary-text leading-[1.2]">
                   Find appointments quickly with doctors who prioritize quality over quantity
                 </p>
               </div>
@@ -210,10 +210,10 @@ function HomePage() {
                 <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Calendar className="w-8 h-8 text-rose-500" />
                 </div>
-                <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
                   Search High-Quality Doctors
                 </h3>
-                <p className="text-gray-600 text-xl">
+                <p className="font-serif text-[18px] text-secondary-text leading-[1.2]">
                   Find doctors who take a genuine interest in your health
                 </p>
               </div>
@@ -225,10 +225,10 @@ function HomePage() {
                 <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <Heart className="w-8 h-8 text-rose-500" />
                 </div>
-                <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
                   Your Choice
                 </h3>
-                <p className="text-gray-600 text-xl">
+                <p className="font-serif text-[18px] text-secondary-text leading-[1.2]">
                   Pick the right doctor for you, not just the ones your insurance approves
                 </p>
               </div>
@@ -240,10 +240,10 @@ function HomePage() {
                 <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
                   <CreditCard className="w-8 h-8 text-rose-500" />
                 </div>
-                <h3 className="text-3xl font-semibold text-gray-900 mb-4">
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
                   Pay Online Instantly
                 </h3>
-                <p className="text-gray-600 text-xl">
+                <p className="font-serif text-[18px] text-secondary-text leading-[1.2]">
                   No phone calls required, no insurance hassles. Instant online bookings and payments for convenient, quality care made simple
                 </p>
               </div>
@@ -255,7 +255,7 @@ function HomePage() {
           <div className="text-center mt-16">
             <Link 
               to="/patient-faqs"
-              className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-rose-500 hover:text-white transition font-semibold text-lg"
+                className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-rose-500 hover:text-white transition font-sans font-semibold text-[18px]"
             >
               FAQs
             </Link>
@@ -283,10 +283,10 @@ function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-12">
             <UserPlus className="w-16 h-16 text-rose-500 mx-auto mb-6" />
-            <h2 className="text-4xl font-bold text-gray-100 mb-4">
+            <h2 className="font-sans text-[48px] font-semibold text-gray-100 mb-4">
               For Providers
             </h2>
-            <p className="text-xl text-gray-200 mb-8">
+            <p className="font-serif text-[18px] text-gray-200 mb-8 leading-[1.2]">
               Grow Your Practice with Self-Paying Patients!
             </p>
             <div className="mb-8">
@@ -294,12 +294,12 @@ function HomePage() {
                 href="https://calendly.com/dsinghjhu2020/30min"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-semibold text-lg"
+                className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:opacity-90 transition font-sans font-semibold text-[18px]"
               >
                 Book A Demo
               </a>
             </div>
-            <p className="text-gray-200 mb-8 text-lg">
+            <p className="font-serif text-[18px] text-gray-200 mb-8 leading-[1.2]">
               Join our platform to connect with self-paying patients who value personalized care
             </p>
 
@@ -313,10 +313,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
                     Find Self-Paying Patients
                   </h3>
-                  <p className="text-gray-200 text-lg">
+                  <p className="font-serif text-[18px] text-gray-200 leading-[1.2]">
                     Connect with a growing number of patients choosing to pay directly for convenient, quality care
                   </p>
                 </div>
@@ -330,10 +330,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
                     'As low as' Pricing
                   </h3>
-                  <p className="text-gray-200 text-lg">
+                  <p className="font-serif text-[18px] text-gray-200 leading-[1.2]">
                     Retain ownership over your prices with the 'as low as' disclaimer for your visits.
                   </p>
                 </div>
@@ -347,10 +347,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
                     Reduce Insurance Reliance
                   </h3>
-                  <p className="text-gray-200 text-lg">
+                  <p className="font-serif text-[18px] text-gray-200 leading-[1.2]">
                     Wean your practice off insurance contracts that pay less and less and reduce care quality
                   </p>
                 </div>
@@ -364,10 +364,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
                     No Extra Work, We'll Call For Bookings
                   </h3>
-                  <p className="text-gray-200 text-lg">
+                  <p className="font-serif text-[18px] text-gray-200 leading-[1.2]">
                     For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
                   </p>
                 </div>
@@ -378,7 +378,7 @@ function HomePage() {
             <div className="text-center mt-12">
               <Link 
                 to="/provider-faqs"
-                className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-semibold text-lg"
+                className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-sans font-semibold text-[18px]"
               >
                 FAQs
               </Link>
@@ -396,31 +396,31 @@ function HomePage() {
               <Link to="/" className="cursor-pointer inline-block">
                 <Logo size={50} showText={true} />
               </Link>
-              <p className="text-gray-400 mt-4">
+              <p className="font-serif text-[18px] text-gray-400 mt-4 leading-[1.2]">
                 Expanding healthcare choices, one appointment at a time
               </p>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">For Patients</h3>
+              <h3 className="font-sans font-semibold mb-4 text-[18px]">For Patients</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#signup" className="hover:text-white transition">Sign Up</a></li>
-                <li><a href="#how-it-works" className="hover:text-white transition">How It Works</a></li>
-                <li><a href="#login" className="hover:text-white transition">Log In</a></li>
+                <li><a href="#signup" className="hover:text-white transition font-serif text-[18px]">Sign Up</a></li>
+                <li><a href="#how-it-works" className="hover:text-white transition font-serif text-[18px]">How It Works</a></li>
+                <li><a href="#login" className="hover:text-white transition font-serif text-[18px]">Log In</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">For Providers</h3>
+              <h3 className="font-sans font-semibold mb-4 text-[18px]">For Providers</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#provider-signup" className="hover:text-white transition">Provider Sign Up</a></li>
-                <li><a href="#for-providers" className="hover:text-white transition">Learn More</a></li>
+                <li><a href="#provider-signup" className="hover:text-white transition font-serif text-[18px]">Provider Sign Up</a></li>
+                <li><a href="#for-providers" className="hover:text-white transition font-serif text-[18px]">Learn More</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Luv Health. All rights reserved.</p>
+            <p className="font-serif text-[18px]">&copy; 2024 Luv Health. All rights reserved.</p>
           </div>
         </div>
       </footer>
