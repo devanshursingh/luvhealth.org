@@ -271,7 +271,7 @@ function HomePage() {
           style={{
             backgroundImage: `url(${doctorImg})`,
             backgroundPosition: 'center center',
-            filter: 'brightness(0.85)'
+            filter: 'brightness(0.7)'
           }}
         />
         
