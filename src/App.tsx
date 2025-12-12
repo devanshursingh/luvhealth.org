@@ -365,10 +365,10 @@ function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-100 mb-3">
-                    No Extra Work, We'll Call For Bookings
+                    No Extra Work, We'll Call For Bookings or Integrate Your Calendar
                   </h3>
                   <p className="text-gray-200 text-lg">
-                    For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
+                    For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings or integrate your calendar with our platform, book a demo now!
                   </p>
                 </div>
               </div>
