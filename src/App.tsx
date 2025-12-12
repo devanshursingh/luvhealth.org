@@ -365,10 +365,10 @@ function HomePage() {
                 </div>
                 <div>
                   <h3 className="text-2xl font-semibold text-gray-100 mb-3">
-                    Integrate Calendar and Payments
+                    No Extra Work, We'll Call For Bookings
                   </h3>
                   <p className="text-gray-200 text-lg">
-                    Sign up and book a demo for seamless calendar integration and payments
+                    For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
                   </p>
                 </div>
               </div>
@@ -378,7 +378,7 @@ function HomePage() {
             <div className="text-center mt-12">
               <Link 
                 to="/provider-faqs"
-                className="inline-block border-2 border-gray-200 text-gray-200 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-semibold text-lg"
+                className="inline-block border-2 border-rose-500 text-rose-500 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-semibold text-lg"
               >
                 FAQs
               </Link>
