@@ -18,7 +18,7 @@
         const transformMatch = logoPathsContent.match(/transform:\s*"([^"]+)"/);
         
         if (heartMatch && letterLMatch && letterUMatch && letterVMatch && transformMatch) {
-          const faviconSVG = `<svg width="32" height="32" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          const faviconSVG = `<svg width="64" height="64" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path
     d="${heartMatch[1]}"
     fill="#f43f5e"

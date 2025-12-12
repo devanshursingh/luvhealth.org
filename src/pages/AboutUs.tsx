@@ -44,7 +44,7 @@ export default function AboutUs() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/" className="cursor-pointer">
-              <Logo size={48} showText={true} />
+              <Logo size={64} showText={true} />
             </Link>
 
             {/* Desktop Navigation */}
