@@ -157,7 +157,7 @@ function HomePage() {
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
             How It Works
           </h2>
-          <p className="text-xl text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 text-center mb-8">
               Don't Wait Months. Don't Wait on Hold.
           </p>
           <div className="text-center mb-12">
@@ -282,11 +282,11 @@ function HomePage() {
         <div className="relative max-w-4xl mx-auto text-center z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-12">
-            <UserPlus className="w-16 h-16 text-white mx-auto mb-6" />
-            <h2 className="text-4xl font-bold text-white mb-4">
+            <UserPlus className="w-16 h-16 text-rose-500 mx-auto mb-6" />
+            <h2 className="text-4xl font-bold text-gray-100 mb-4">
               For Providers
             </h2>
-            <p className="text-xl text-white mb-8">
+            <p className="text-xl text-gray-200 mb-8">
               Grow Your Practice with Self-Paying Patients!
             </p>
             <div className="mb-8">
@@ -299,7 +299,7 @@ function HomePage() {
                 Book A Demo
               </a>
             </div>
-            <p className="text-white mb-8 text-lg">
+            <p className="text-gray-200 mb-8 text-lg">
               Join our platform to connect with self-paying patients who value personalized care
             </p>
 
@@ -308,15 +308,15 @@ function HomePage() {
               {/* Benefit 1 */}
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <Users className="w-6 h-6 text-rose-500" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
                     Find Self-Paying Patients
                   </h3>
-                  <p className="text-white text-lg">
+                  <p className="text-gray-200 text-lg">
                     Connect with a growing number of patients choosing to pay directly for convenient, quality care
                   </p>
                 </div>
@@ -325,15 +325,15 @@ function HomePage() {
               {/* Benefit 2 */}
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <DollarSign className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-rose-500" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
                     'As low as' Pricing
                   </h3>
-                  <p className="text-white text-lg">
+                  <p className="text-gray-200 text-lg">
                     Retain ownership over your prices with the 'as low as' disclaimer for your visits.
                   </p>
                 </div>
@@ -342,15 +342,15 @@ function HomePage() {
               {/* Benefit 3 */}
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <ShieldOff className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <ShieldOff className="w-6 h-6 text-rose-500" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
                     Reduce Insurance Reliance
                   </h3>
-                  <p className="text-white text-lg">
+                  <p className="text-gray-200 text-lg">
                     Wean your practice off insurance contracts that pay less and less and reduce care quality
                   </p>
                 </div>
@@ -359,15 +359,15 @@ function HomePage() {
               {/* Benefit 4 */}
               <div className="flex gap-6">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                    <CalendarCheck className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                    <CalendarCheck className="w-6 h-6 text-rose-500" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-semibold text-white mb-3">
+                  <h3 className="text-2xl font-semibold text-gray-100 mb-3">
                     Integrate Calendar and Payments
                   </h3>
-                  <p className="text-white text-lg">
+                  <p className="text-gray-200 text-lg">
                     Sign up and book a demo for seamless calendar integration and payments
                   </p>
                 </div>
@@ -378,7 +378,7 @@ function HomePage() {
             <div className="text-center mt-12">
               <Link 
                 to="/provider-faqs"
-                className="inline-block border-2 border-white text-white px-8 py-4 rounded-full hover:bg-white hover:text-gray-900 transition font-semibold text-lg"
+                className="inline-block border-2 border-gray-200 text-gray-200 px-8 py-4 rounded-full hover:bg-gray-200 hover:text-gray-900 transition font-semibold text-lg"
               >
                 FAQs
               </Link>
