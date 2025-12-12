@@ -23,21 +23,21 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
-              <a href="/#how-it-works" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="/#how-it-works" className="text-secondary hover:text-ui-accent transition">
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="/#for-providers" className="text-secondary hover:text-ui-accent transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-gray-700 hover:text-rose-500 transition">
+              <Link to="/about-us" className="text-secondary hover:text-ui-accent transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-gray-700 hover:text-rose-500 transition">
+              <a href="/#login" className="text-secondary hover:text-ui-accent transition">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="bg-rose-500 text-white px-6 py-2 rounded-full hover:bg-rose-600 transition"
+                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition"
               >
                 Sign Up
               </a>
@@ -57,21 +57,21 @@ export default function Layout({ children }: LayoutProps) {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-4 py-4 space-y-4">
-              <a href="/#how-it-works" className="block text-gray-700 hover:text-rose-500">
+              <a href="/#how-it-works" className="block text-secondary hover:text-ui-accent">
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-gray-700 hover:text-rose-500">
+              <a href="/#for-providers" className="block text-secondary hover:text-ui-accent">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-gray-700 hover:text-rose-500">
+              <Link to="/about-us" className="block text-secondary hover:text-ui-accent">
                 About Us
               </Link>
-              <a href="/#login" className="block text-gray-700 hover:text-rose-500">
+              <a href="/#login" className="block text-secondary hover:text-ui-accent">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="block bg-rose-500 text-white px-6 py-2 rounded-full text-center hover:bg-rose-600"
+                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600"
               >
                 Sign Up
               </a>

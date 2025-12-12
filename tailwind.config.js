@@ -13,6 +13,8 @@ export default {
         primary: '#111827',
         secondary: '#374151',
         'ui-accent': '#f43f5e',
+        'primary-text': '#111827',
+        'secondary-text': '#374151',
       },
     },
   },

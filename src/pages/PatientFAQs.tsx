@@ -19,21 +19,21 @@ export default function PatientFAQs() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
-              <a href="/#how-it-works" className="text-secondary-text hover:text-rose-500 transition">
+              <a href="/#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-secondary-text hover:text-rose-500 transition">
+              <a href="/#for-providers" className="text-secondary-text hover:text-ui-accent transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-secondary-text hover:text-rose-500 transition">
+              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-secondary-text hover:text-rose-500 transition">
+              <a href="/#login" className="text-secondary-text hover:text-ui-accent transition">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="bg-rose-500 text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium"
+                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -53,21 +53,21 @@ export default function PatientFAQs() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
-              <a href="/#how-it-works" className="block text-secondary-text hover:text-rose-500">
+              <a href="/#how-it-works" className="block text-secondary-text hover:text-ui-accent">
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-secondary-text hover:text-rose-500">
+              <a href="/#for-providers" className="block text-secondary-text hover:text-ui-accent">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-secondary-text hover:text-rose-500">
+              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
                 About Us
               </Link>
-              <a href="/#login" className="block text-secondary-text hover:text-rose-500">
+              <a href="/#login" className="block text-secondary-text hover:text-ui-accent">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="block bg-rose-500 text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium"
+                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -89,7 +89,7 @@ export default function PatientFAQs() {
               <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
                 Patient FAQ Question
               </h3>
-              <p className="font-serif text-[18px] text-secondary-text leading-[1.2]">
+              <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
                 Patient FAQ answer goes here.
               </p>
             </div>
@@ -98,7 +98,7 @@ export default function PatientFAQs() {
           <div className="text-center mt-12">
             <Link 
               to="/"
-              className="inline-block bg-rose-500 text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px]"
+              className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px]"
             >
               Back to Home
             </Link>
