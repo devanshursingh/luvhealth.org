@@ -19,7 +19,7 @@ export default {
       colors: {
         'primary-text': '#111827',
         'secondary-text': '#374151',
-        'ui-accent': '#2563EB',
+        'ui-accent': '#f43f5e',
       },
     },
   },
