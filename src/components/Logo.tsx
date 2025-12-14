@@ -52,7 +52,13 @@ export default function Logo({
         </g>
       </svg>
       {showText && (
-        <span className="font-sans text-2xl font-semibold text-ui-accent" style={{ pointerEvents: 'none' }}>
+        <span 
+          className="font-sans font-semibold text-ui-accent" 
+          style={{ 
+            pointerEvents: 'none',
+            fontSize: `${size * 0.36}px` // Proportional to logo size (roughly 36% of logo size)
+          }}
+        >
           luv health
         </span>
       )}
