@@ -147,6 +147,46 @@ function HomePage() {
                 Find Doctors
               </button>
             </div>
+            
+            {/* Suggested Search Items */}
+            <div className="flex flex-wrap justify-center gap-3 mt-6">
+              <button
+                onClick={() => {
+                  setSearchQuery('Pediatrician');
+                  handleSearch();
+                }}
+                className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
+              >
+                👶 Pediatrician
+              </button>
+              <button
+                onClick={() => {
+                  setSearchQuery('Ob/Gyn');
+                  handleSearch();
+                }}
+                className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
+              >
+                🏥 Ob/Gyn
+              </button>
+              <button
+                onClick={() => {
+                  setSearchQuery('Internist');
+                  handleSearch();
+                }}
+                className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
+              >
+                🩺 Internist
+              </button>
+              <button
+                onClick={() => {
+                  setSearchQuery('Neurologist');
+                  handleSearch();
+                }}
+                className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
+              >
+                🧠 Neurologist
+              </button>
+            </div>
           </div>
         </div>
       </section>
