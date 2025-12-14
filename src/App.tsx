@@ -235,10 +235,10 @@ function HomePage() {
                     <Search className="w-8 h-8 text-ui-accent" />
                   </div>
                   <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                    Book ASAP Appointments
+                    Book ASAP Appointments, No Waiting on Hold
                   </h3>
                   <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    Find appointments quickly with doctors who prioritize quality over quantity
+                    Find appointments ASAP with out-of-network doctors who actually have time for you
                   </p>
                 </div>
               </div>
@@ -277,10 +277,10 @@ function HomePage() {
                     <CreditCard className="w-8 h-8 text-ui-accent" />
                   </div>
                   <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                    Pay Online Instantly
+                    Book and Pay Online
                   </h3>
                   <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    No phone calls required, no insurance hassles. Instant online bookings and payments for convenient, quality care made simple
+                    No phone calls required, no insurance hassles. Instant online bookings and transparent, no-surprise prices for convenient, quality care made simple
                   </p>
                 </div>
               </div>
