@@ -238,7 +238,7 @@ function HomePage() {
                     Book ASAP Appointments, No Waiting on Hold
                   </h3>
                   <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    Find appointments ASAP with out-of-network doctors who actually have time for you
+                    Find appointments ASAP with doctors who actually have time for you
                   </p>
                 </div>
               </div>
@@ -252,7 +252,7 @@ function HomePage() {
                     Search High-Quality Doctors
                   </h3>
                   <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    Find doctors who take a genuine interest in your health
+                    Find doctors who take a genuine interest in your health and prioritize quality over quantity
                   </p>
                 </div>
               </div>

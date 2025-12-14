@@ -15,10 +15,10 @@ export default function PatientFAQs() {
             {/* FAQ Item - Add your patient FAQs here */}
             <div className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm">
               <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                Does this work with my insurance?
+                Does you take my insurance?
               </h3>
               <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                Our platform is not insurance-based. You can get an ASAP appointment with an out-of-network doctor for a transparent, upfront rate. We don't accept insurance because it allows us to offer ASAP bookings, not 6 month wait times.
+                Our platform is not insurance-based, but your doctor can provide you with a detailed receipt (superbill) that you can submit to your insurance for out-of-network reimbursement, if your insurance allows it. Our platform helps you book an ASAP appointment with an out-of-network doctor for a transparent, upfront rate. We don't accept insurance because it allows us to offer ASAP bookings, not 6 month wait times.
               </p>
             </div>
           </div>
