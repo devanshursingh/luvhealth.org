@@ -51,7 +51,7 @@ function HomePage() {
         {/* Content */}
         <div className="relative max-w-4xl mx-auto text-center z-10">
           <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
-            See Your Doctor Now,<br />No Phone Calls Required
+            See Your Doctor ASAP,<br />No Phone Calls Required
           </h1>
           <p className="font-sans text-[18px] text-white mb-12 drop-shadow-md leading-[1.2]">
             Book hard-to-find doctors online for ASAP appointments
@@ -120,9 +120,14 @@ function HomePage() {
             </div>
             
             {/* Available In */}
-            <p className="font-sans text-[16px] text-white mt-6 drop-shadow-md text-center">
-              Available In: Los Angeles
-            </p>
+            <div className="mt-6 flex items-center justify-center gap-2">
+              <span className="font-sans text-[16px] text-white/90 drop-shadow-md">
+                Available In:
+              </span>
+              <span className="font-sans text-[18px] font-semibold text-white drop-shadow-lg flex items-center gap-1.5 bg-white/10 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/20">
+                🌴 Los Angeles
+              </span>
+            </div>
           </div>
         </div>
       </section>
