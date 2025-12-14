@@ -22,22 +22,22 @@ export default function Layout({ children }: LayoutProps) {
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="/#how-it-works" className="text-secondary hover:text-ui-accent transition">
+            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
+              <a href="/#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-secondary hover:text-ui-accent transition">
+              <a href="/#for-providers" className="text-secondary-text hover:text-ui-accent transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-secondary hover:text-ui-accent transition">
+              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-secondary hover:text-ui-accent transition">
+              <a href="/#login" className="text-secondary-text hover:text-ui-accent transition">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition"
+                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium text-sm"
               >
                 Sign Up
               </a>
@@ -56,22 +56,22 @@ export default function Layout({ children }: LayoutProps) {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-4">
-              <a href="/#how-it-works" className="block text-secondary hover:text-ui-accent">
+            <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
+              <a href="/#how-it-works" className="block text-secondary-text hover:text-ui-accent">
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-secondary hover:text-ui-accent">
+              <a href="/#for-providers" className="block text-secondary-text hover:text-ui-accent">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-secondary hover:text-ui-accent">
+              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
                 About Us
               </Link>
-              <a href="/#login" className="block text-secondary hover:text-ui-accent">
+              <a href="/#login" className="block text-secondary-text hover:text-ui-accent">
                 Log In
               </a>
               <a 
                 href="/#signup" 
-                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600"
+                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium"
               >
                 Sign Up
               </a>
@@ -91,31 +91,31 @@ export default function Layout({ children }: LayoutProps) {
               <Link to="/" className="cursor-pointer inline-block">
                 <Logo size={64} showText={true} />
               </Link>
-              <p className="text-gray-400 mt-4">
+              <p className="font-sans text-[18px] text-gray-400 mt-4 leading-[1.2]">
                 Expanding healthcare choices, one appointment at a time
               </p>
             </div>
             
             <div>
-              <h3 className="font-semibold mb-4">For Patients</h3>
+              <h3 className="font-sans font-semibold mb-4 text-[18px]">For Patients</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/#signup" className="hover:text-white transition">Sign Up</a></li>
-                <li><a href="/#how-it-works" className="hover:text-white transition">How It Works</a></li>
-                <li><a href="/#login" className="hover:text-white transition">Log In</a></li>
+                <li><a href="/#signup" className="hover:text-white transition font-sans text-[18px]">Sign Up</a></li>
+                <li><a href="/#how-it-works" className="hover:text-white transition font-sans text-[18px]">How It Works</a></li>
+                <li><a href="/#login" className="hover:text-white transition font-sans text-[18px]">Log In</a></li>
               </ul>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">For Providers</h3>
+              <h3 className="font-sans font-semibold mb-4 text-[18px]">For Providers</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/#provider-signup" className="hover:text-white transition">Provider Sign Up</a></li>
-                <li><a href="/#for-providers" className="hover:text-white transition">Learn More</a></li>
+                <li><a href="/#provider-signup" className="hover:text-white transition font-sans text-[18px]">Provider Sign Up</a></li>
+                <li><a href="/#for-providers" className="hover:text-white transition font-sans text-[18px]">Learn More</a></li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Luv Health. All rights reserved.</p>
+            <p className="font-sans text-[18px]">&copy; 2024 Luv Health. All rights reserved.</p>
           </div>
         </div>
       </footer>

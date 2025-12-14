@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Search, Calendar, Heart, CreditCard, UserPlus, Menu, X, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
+import { Search, Calendar, Heart, CreditCard, UserPlus, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
 import doctorPatientImg from './assets/hero_background.png';
 import doctorImg from './assets/doctor.png';
-import Logo from './components/Logo';
+import Layout from './components/Layout';
 import PatientFAQs from './pages/PatientFAQs';
 import ProviderFAQs from './pages/ProviderFAQs';
 import AboutUs from './pages/AboutUs';
@@ -12,7 +12,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
@@ -20,75 +19,7 @@ function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <Link to="/" className="cursor-pointer">
-              <Logo size={64} showText={true} />
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
-              <a href="#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
-                How It Works
-              </a>
-              <a href="#for-providers" className="text-secondary-text hover:text-ui-accent transition">
-                For Providers
-              </a>
-              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
-                About Us
-              </Link>
-              <a href="#login" className="text-secondary-text hover:text-ui-accent transition">
-                Log In
-              </a>
-              <a 
-                href="#signup" 
-                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium text-sm"
-              >
-                Sign Up
-              </a>
-            </div>
-
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
-              <a href="#how-it-works" className="block text-secondary-text hover:text-ui-accent">
-                How It Works
-              </a>
-              <a href="#for-providers" className="block text-secondary-text hover:text-ui-accent">
-                For Providers
-              </a>
-              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
-                About Us
-              </Link>
-              <a href="#login" className="block text-secondary-text hover:text-ui-accent">
-                Log In
-              </a>
-              <a 
-                href="#signup" 
-                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium"
-              >
-                Sign Up
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
-
+    <Layout>
       {/* Hero Section */}
       <section className="relative pt-40 pb-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Image with Overlay */}
@@ -210,53 +141,69 @@ function HomePage() {
           </div>
 
           {/* Desktop Grid Layout */}
-          <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-              <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Search className="w-8 h-8 text-ui-accent" />
+          <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8 text-left">
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <Search className="w-6 h-6 text-ui-accent" />
+                </div>
               </div>
-              <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                Book ASAP Appointments
-              </h3>
-              <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                Find appointments quickly with doctors who prioritize quality over quantity
-              </p>
+              <div>
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
+                  Book ASAP Appointments
+                </h3>
+                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                  Find appointments quickly with doctors who prioritize quality over quantity
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-              <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Calendar className="w-8 h-8 text-ui-accent" />
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <Calendar className="w-6 h-6 text-ui-accent" />
+                </div>
               </div>
-              <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                Search High-Quality Doctors
-              </h3>
-              <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                Find doctors who take a genuine interest in your health
-              </p>
+              <div>
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
+                  Search High-Quality Doctors
+                </h3>
+                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                  Find doctors who take a genuine interest in your health
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-              <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-8 h-8 text-ui-accent" />
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-ui-accent" />
+                </div>
               </div>
-              <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                Your Choice
-              </h3>
-              <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                Pick the right doctor for you, not just the ones your insurance approves
-              </p>
+              <div>
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
+                  Your Choice
+                </h3>
+                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                  Pick the right doctor for you, not just the ones your insurance approves
+                </p>
+              </div>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-lg p-12 text-center">
-              <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                <CreditCard className="w-8 h-8 text-ui-accent" />
+            <div className="flex gap-6">
+              <div className="flex-shrink-0">
+                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                  <CreditCard className="w-6 h-6 text-ui-accent" />
+                </div>
               </div>
-              <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                Pay Online Instantly
-              </h3>
-              <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                No phone calls required, no insurance hassles. Instant online bookings and payments for convenient, quality care made simple
-              </p>
+              <div>
+                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
+                  Pay Online Instantly
+                </h3>
+                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                  No phone calls required, no insurance hassles. Instant online bookings and payments for convenient, quality care made simple
+                </p>
+              </div>
             </div>
           </div>
 
@@ -552,44 +499,7 @@ function HomePage() {
         </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            <div>
-              <Link to="/" className="cursor-pointer inline-block">
-                <Logo size={64} showText={true} />
-              </Link>
-              <p className="font-sans text-[18px] text-gray-400 mt-4 leading-[1.2]">
-                Expanding healthcare choices, one appointment at a time
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-sans font-semibold mb-4 text-[18px]">For Patients</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#signup" className="hover:text-white transition font-sans text-[18px]">Sign Up</a></li>
-                <li><a href="#how-it-works" className="hover:text-white transition font-sans text-[18px]">How It Works</a></li>
-                <li><a href="#login" className="hover:text-white transition font-sans text-[18px]">Log In</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="font-sans font-semibold mb-4 text-[18px]">For Providers</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#provider-signup" className="hover:text-white transition font-sans text-[18px]">Provider Sign Up</a></li>
-                <li><a href="#for-providers" className="hover:text-white transition font-sans text-[18px]">Learn More</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p className="font-sans text-[18px]">&copy; 2024 Luv Health. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }
 

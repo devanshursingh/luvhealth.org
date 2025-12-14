@@ -1,7 +1,6 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Linkedin } from 'lucide-react';
-import Logo from '../components/Logo';
+import { Linkedin } from 'lucide-react';
+import Layout from '../components/Layout';
 import devanshuPhoto from '../assets/0b9bf62f4bbf6d17d9b64af8a00f57f76d9a7f7b.png';
 import divyanshPhoto from '../assets/948fe3bdbd94ab8d333035ceffc4e0884e82054e.png';
 import srikanthPhoto from '../assets/5629bb49a580382f9f44d0885caef801b0de6dfc.png';
@@ -34,78 +33,8 @@ const team = [
 ];
 
 export default function AboutUs() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <nav className="fixed w-full bg-white shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            {/* Logo */}
-            <Link to="/" className="cursor-pointer">
-              <Logo size={64} showText={true} />
-            </Link>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
-              <a href="/#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
-                How It Works
-              </a>
-              <a href="/#for-providers" className="text-secondary-text hover:text-ui-accent transition">
-                For Providers
-              </a>
-              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
-                About Us
-              </Link>
-              <a href="/#login" className="text-secondary-text hover:text-ui-accent transition">
-                Log In
-              </a>
-              <a 
-                href="/#signup" 
-                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium"
-              >
-                Sign Up
-              </a>
-            </div>
-
-            {/* Mobile menu button */}
-            <button 
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
-              <a href="/#how-it-works" className="block text-secondary-text hover:text-ui-accent">
-                How It Works
-              </a>
-              <a href="/#for-providers" className="block text-secondary-text hover:text-ui-accent">
-                For Providers
-              </a>
-              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
-                About Us
-              </Link>
-              <a href="/#login" className="block text-secondary-text hover:text-ui-accent">
-                Log In
-              </a>
-              <a 
-                href="/#signup" 
-                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium"
-              >
-                Sign Up
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
-
+    <Layout>
       {/* About Us Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-rose-50">
         <div className="max-w-6xl mx-auto">
@@ -174,7 +103,7 @@ export default function AboutUs() {
           </div>
         </div>
       </section>
-    </div>
+    </Layout>
   );
 }
 
