@@ -20,7 +20,7 @@ export default function Logo({
   className = ''
 }: LogoProps) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`} style={{ pointerEvents: 'none' }}>
       <svg
         width={size}
         height={size}
@@ -30,6 +30,7 @@ export default function Logo({
         className="transition-transform hover:scale-110"
         role="img"
         aria-label="Luv Health logo"
+        style={{ pointerEvents: 'none' }}
       >
         <title>Luv Health</title>
         <path
@@ -51,7 +52,7 @@ export default function Logo({
         </g>
       </svg>
       {showText && (
-        <span className="font-sans text-2xl font-semibold text-ui-accent">
+        <span className="font-sans text-2xl font-semibold text-ui-accent" style={{ pointerEvents: 'none' }}>
           luv health
         </span>
       )}

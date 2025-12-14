@@ -54,7 +54,7 @@ function HomePage() {
             See Your Doctor Now,<br />No Phone Calls Required
           </h1>
           <p className="font-sans text-[18px] text-white mb-12 drop-shadow-md leading-[1.2]">
-            Book hard-to-find LA doctors online for faster appointments
+            Book hard-to-find doctors online for ASAP appointments
           </p>
 
           {/* Search Bar */}
@@ -118,6 +118,11 @@ function HomePage() {
                 🧠 Neurologist
               </button>
             </div>
+            
+            {/* Available In */}
+            <p className="font-sans text-[16px] text-white mt-6 drop-shadow-md text-center">
+              Available In: Los Angeles
+            </p>
           </div>
         </div>
       </section>

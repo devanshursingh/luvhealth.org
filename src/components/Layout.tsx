@@ -17,12 +17,12 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             {/* Logo */}
-            <Link to="/" className="cursor-pointer">
+            <Link to="/" className="cursor-pointer hover:opacity-80 transition-opacity">
               <Logo size={100} showText={true} />
             </Link>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-sm">
+            <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-base">
               <a href="/#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
                 How It Works
               </a>
@@ -37,7 +37,7 @@ export default function Layout({ children }: LayoutProps) {
               </a>
               <a 
                 href="/#signup" 
-                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium text-sm"
+                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium text-base"
               >
                 Sign Up
               </a>
@@ -56,7 +56,7 @@ export default function Layout({ children }: LayoutProps) {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className="md:hidden bg-white border-t">
-            <div className="px-4 py-4 space-y-4 font-sans font-medium text-sm">
+            <div className="px-4 py-4 space-y-4 font-sans font-medium text-base">
               <a href="/#how-it-works" className="block text-secondary-text hover:text-ui-accent">
                 How It Works
               </a>
@@ -71,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
               </a>
               <a 
                 href="/#signup" 
-                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium"
+                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium text-base"
               >
                 Sign Up
               </a>
