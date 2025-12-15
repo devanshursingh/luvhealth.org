@@ -20,14 +20,14 @@ export default function Logo({
   className = ''
 }: LogoProps) {
   return (
-    <div className={`flex items-center gap-3 ${className}`} style={{ pointerEvents: 'none' }}>
+    <div className={`flex items-center gap-3 logo-heartbeat ${className}`} style={{ pointerEvents: 'none' }}>
       <svg
         width={size}
         height={size}
         viewBox={logoPaths.viewBox}
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="transition-transform hover:scale-110"
+        className="transition-transform"
         role="img"
         aria-label="Luv Health logo"
         style={{ pointerEvents: 'none' }}

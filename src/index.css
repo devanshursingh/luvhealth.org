@@ -127,3 +127,23 @@ html {
 .slick-next {
   right: -40px !important;
 }
+
+/* Logo heartbeat animation */
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.logo-heartbeat:hover svg {
+  animation: heartbeat 1s ease-in-out infinite;
+}
