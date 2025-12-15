@@ -22,8 +22,8 @@ function HomePage() {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="relative pt-40 pb-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Hero Section - Full Screen Video */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ marginTop: '-96px', paddingTop: '96px' }}>
         {/* Background Video with Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <video
@@ -51,7 +51,7 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
         
         {/* Content */}
-        <div className="relative max-w-4xl mx-auto text-center z-10">
+        <div className="relative max-w-4xl mx-auto text-center z-10 pt-24">
           <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
             See Your Doctor ASAP,<br />No Phone Calls Required
           </h1>
