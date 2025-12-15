@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Search, Calendar, Heart, CreditCard, UserPlus, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
 import heroVideo from './assets/hero_background_video.mp4';
-import doctorImg from './assets/doctor.png';
+import doctorPatientImg from './assets/doctor-patient.png';
 import Layout from './components/Layout';
 import PatientFAQs from './pages/PatientFAQs';
 import ProviderFAQs from './pages/ProviderFAQs';
@@ -19,6 +19,52 @@ function HomePage() {
   const handleSearch = () => {
     window.open('https://form.typeform.com/to/jtte8Dj4', '_blank');
   };
+
+  const howItWorksSteps = [
+    {
+      icon: Search,
+      title: 'Book ASAP Appointments',
+      description: 'Find appointments quickly with doctors who actually have time for you'
+    },
+    {
+      icon: Calendar,
+      title: 'Search High-Quality Doctors',
+      description: 'Find doctors who take a genuine interest in your health and prioritize quality over quantity'
+    },
+    {
+      icon: Heart,
+      title: 'Your Choice',
+      description: 'Pick the right doctor for you, not just the ones your insurance approves'
+    },
+    {
+      icon: CreditCard,
+      title: 'Book and Pay Online',
+      description: 'No phone calls required, no insurance hassles. Instant online bookings and transparent, no-surprise prices for convenient, quality care made simple'
+    }
+  ];
+
+  const providerBenefits = [
+    {
+      icon: Users,
+      title: 'Find Self-Paying Patients',
+      description: 'Connect with a growing number of patients choosing to pay directly for convenient, quality care'
+    },
+    {
+      icon: DollarSign,
+      title: "'As low as' Pricing",
+      description: "Retain ownership over your prices with the 'as low as' disclaimer for your visits."
+    },
+    {
+      icon: ShieldOff,
+      title: 'Reduce Insurance Reliance',
+      description: 'Wean your practice off insurance contracts that pay less and less and reduce care quality'
+    },
+    {
+      icon: CalendarCheck,
+      title: "No Extra Work, We'll Call For Bookings",
+      description: 'For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings'
+    }
+  ];
 
   return (
     <Layout>
@@ -156,69 +202,26 @@ function HomePage() {
 
           {/* Desktop Grid Layout */}
           <div className="hidden md:grid md:grid-cols-2 gap-8 mb-8 text-left">
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <Search className="w-6 h-6 text-ui-accent" />
+            {howItWorksSteps.map((step, index) => {
+              const IconComponent = step.icon;
+              return (
+                <div key={index} className="flex gap-6">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                      <IconComponent className="w-6 h-6 text-ui-accent" />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
+                      {step.title}
+                    </h3>
+                    <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                      {step.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div>
-                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Book ASAP Appointments
-                </h3>
-                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  Find appointments quickly with doctors who actually have time for you
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <Calendar className="w-6 h-6 text-ui-accent" />
-                </div>
-              </div>
-              <div>
-                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Search High-Quality Doctors
-                </h3>
-                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  Find doctors who take a genuine interest in your health and prioritize quality over quantity
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <Heart className="w-6 h-6 text-ui-accent" />
-                </div>
-              </div>
-              <div>
-                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Your Choice
-                </h3>
-                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  Pick the right doctor for you, not just the ones your insurance approves
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-6">
-              <div className="flex-shrink-0">
-                <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                  <CreditCard className="w-6 h-6 text-ui-accent" />
-                </div>
-              </div>
-              <div>
-                <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Book and Pay Online
-                </h3>
-                <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  No phone calls required, no insurance hassles. Instant online bookings and transparent, no-surprise prices for convenient, quality care made simple
-                </p>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
           {/* Mobile Carousel */}
@@ -233,61 +236,24 @@ function HomePage() {
               autoplaySpeed={4000}
               arrows={false}
             >
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Search className="w-8 h-8 text-ui-accent" />
+              {howItWorksSteps.map((step, index) => {
+                const IconComponent = step.icon;
+                return (
+                  <div key={index} className="px-6 py-4">
+                    <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
+                      <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <IconComponent className="w-8 h-8 text-ui-accent" />
+                      </div>
+                      <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                    Book ASAP Appointments, No Waiting on Hold
-                  </h3>
-                  <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    Find appointments ASAP with doctors who actually have time for you
-                  </p>
-                </div>
-              </div>
-
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Calendar className="w-8 h-8 text-ui-accent" />
-                  </div>
-                  <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                    Search High-Quality Doctors
-                  </h3>
-                  <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    Find doctors who take a genuine interest in your health and prioritize quality over quantity
-                  </p>
-                </div>
-              </div>
-
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <Heart className="w-8 h-8 text-ui-accent" />
-                  </div>
-                  <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                    Your Choice
-                  </h3>
-                  <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    Pick the right doctor for you, not just the ones your insurance approves
-                  </p>
-                </div>
-              </div>
-
-              <div className="px-4">
-                <div className="bg-white rounded-2xl shadow-lg p-12 text-center min-h-[300px] flex flex-col items-center justify-center">
-                  <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CreditCard className="w-8 h-8 text-ui-accent" />
-                  </div>
-                  <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-                    Book and Pay Online
-                  </h3>
-                  <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                    No phone calls required, no insurance hassles. Instant online bookings and transparent, no-surprise prices for convenient, quality care made simple
-                  </p>
-                </div>
-              </div>
+                );
+              })}
             </Slider>
           </div>
 
@@ -309,7 +275,7 @@ function HomePage() {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${doctorImg})`,
+            backgroundImage: `url(${doctorPatientImg})`,
             backgroundPosition: 'center center',
             filter: 'brightness(0.5)'
           }}
@@ -349,73 +315,26 @@ function HomePage() {
 
             {/* Desktop Grid Layout */}
             <div className="hidden md:grid md:grid-cols-2 gap-8 mb-12 text-left">
-              {/* Benefit 1 */}
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                    <Users className="w-6 h-6 text-ui-accent" />
+              {providerBenefits.map((benefit, index) => {
+                const IconComponent = benefit.icon;
+                return (
+                  <div key={index} className="flex gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-ui-accent" />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
+                        {benefit.title}
+                      </h3>
+                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
+                        {benefit.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                    Find Self-Paying Patients
-                  </h3>
-                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                    Connect with a growing number of patients choosing to pay directly for convenient, quality care
-                  </p>
-                </div>
-              </div>
-
-              {/* Benefit 2 */}
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                    <DollarSign className="w-6 h-6 text-ui-accent" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                    'As low as' Pricing
-                  </h3>
-                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                    Retain ownership over your prices with the 'as low as' disclaimer for your visits.
-                  </p>
-                </div>
-              </div>
-
-              {/* Benefit 3 */}
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                    <ShieldOff className="w-6 h-6 text-ui-accent" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                    Reduce Insurance Reliance
-                  </h3>
-                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                    Wean your practice off insurance contracts that pay less and less and reduce care quality
-                  </p>
-                </div>
-              </div>
-
-              {/* Benefit 4 */}
-              <div className="flex gap-6">
-                <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                    <CalendarCheck className="w-6 h-6 text-ui-accent" />
-                  </div>
-                </div>
-                <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                    No Extra Work, We'll Call For Bookings
-                  </h3>
-                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                    For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
-                  </p>
-                </div>
-              </div>
+                );
+              })}
             </div>
 
             {/* Mobile Carousel */}
@@ -430,77 +349,24 @@ function HomePage() {
                 autoplaySpeed={4000}
                 arrows={false}
               >
-                <div className="px-4">
-                  <div className="flex gap-6 text-left">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                        <Users className="w-6 h-6 text-ui-accent" />
+                {providerBenefits.map((benefit, index) => {
+                  const IconComponent = benefit.icon;
+                  return (
+                    <div key={index} className="px-4">
+                      <div className="text-center min-h-[300px] flex flex-col items-center justify-center">
+                        <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                          <IconComponent className="w-8 h-8 text-ui-accent" />
+                        </div>
+                        <h3 className="font-sans text-[32px] font-semibold text-white mb-4">
+                          {benefit.title}
+                        </h3>
+                        <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
+                          {benefit.description}
+                        </p>
                       </div>
                     </div>
-                    <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                        Find Self-Paying Patients
-                      </h3>
-                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                        Connect with a growing number of patients choosing to pay directly for convenient, quality care
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-4">
-                  <div className="flex gap-6 text-left">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                        <DollarSign className="w-6 h-6 text-ui-accent" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                        'As low as' Pricing
-                      </h3>
-                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                        Retain ownership over your prices with the 'as low as' disclaimer for your visits.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-4">
-                  <div className="flex gap-6 text-left">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                        <ShieldOff className="w-6 h-6 text-ui-accent" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                        Reduce Insurance Reliance
-                      </h3>
-                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                        Wean your practice off insurance contracts that pay less and less and reduce care quality
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="px-4">
-                  <div className="flex gap-6 text-left">
-                    <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-rose-100 rounded-full flex items-center justify-center">
-                        <CalendarCheck className="w-6 h-6 text-ui-accent" />
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
-                        No Extra Work, We'll Call For Bookings
-                      </h3>
-                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
-                        For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </Slider>
             </div>
 
