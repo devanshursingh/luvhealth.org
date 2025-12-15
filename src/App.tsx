@@ -140,7 +140,7 @@ function HomePage() {
           <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-4">
             How It Works
           </h2>
-          <p className="font-sans text-[18px] text-secondary-text text-center mb-8 leading-[1.2]">
+          <p className="font-sans text-[24px] text-secondary-text text-center mb-8 leading-[1.2]">
               Don't Wait Months. Don't Wait on Hold.
           </p>
           <div className="text-center mb-12">
@@ -162,10 +162,10 @@ function HomePage() {
               </div>
               <div>
                 <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Book ASAP Appointments
+                  Book ASAP Appointments, No Waiting on Hold
                 </h3>
                 <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  Find appointments quickly with doctors who prioritize quality over quantity
+                  Find appointments ASAP with doctors who actually have time for you
                 </p>
               </div>
             </div>
@@ -181,7 +181,7 @@ function HomePage() {
                   Search High-Quality Doctors
                 </h3>
                 <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  Find doctors who take a genuine interest in your health
+                  Find doctors who take a genuine interest in your health and prioritize quality over quantity
                 </p>
               </div>
             </div>
@@ -210,10 +210,10 @@ function HomePage() {
               </div>
               <div>
                 <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Pay Online Instantly
+                  Book and Pay Online
                 </h3>
                 <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  No phone calls required, no insurance hassles. Instant online bookings and payments for convenient, quality care made simple
+                  No phone calls required, no insurance hassles. Instant online bookings and transparent, no-surprise prices for convenient, quality care made simple
                 </p>
               </div>
             </div>
