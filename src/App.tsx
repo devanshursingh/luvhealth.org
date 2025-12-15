@@ -52,7 +52,7 @@ function HomePage() {
     {
       icon: DollarSign,
       title: "'As low as' Pricing",
-      description: "Retain ownership over your prices with the 'as low as' disclaimer for your visits."
+      description: "Retain ownership over your patient visit price with the 'as low as' disclaimer for your visits"
     },
     {
       icon: ShieldOff,
