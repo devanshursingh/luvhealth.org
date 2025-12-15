@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 w-full bg-white/90 backdrop-blur-md shadow-lg z-[100] border-b border-white/20">
+      <nav className="fixed top-0 left-0 right-0 w-full bg-white/10 backdrop-blur-md shadow-lg z-[100] border-b border-white/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             {/* Logo */}
