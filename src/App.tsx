@@ -23,7 +23,7 @@ function HomePage() {
   return (
     <Layout>
       {/* Hero Section - Full Screen Video */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ marginTop: '-96px', paddingTop: '96px' }}>
+      <section className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ marginTop: '0', paddingTop: '96px' }}>
         {/* Background Video with Overlay */}
         <div className="absolute inset-0 overflow-hidden">
           <video
