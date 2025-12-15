@@ -17,7 +17,7 @@ function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
-    window.open('https://form.typeform.com/to/evsI3Pne', '_blank');
+    window.open('https://form.typeform.com/to/jtte8Dj4', '_blank');
   };
 
   return (
@@ -145,7 +145,7 @@ function HomePage() {
           </p>
           <div className="text-center mb-12">
             <a 
-              href="https://form.typeform.com/to/evsI3Pne"
+              href="https://form.typeform.com/to/jtte8Dj4"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px]"
