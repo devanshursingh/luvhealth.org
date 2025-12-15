@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
@@ -10,7 +10,7 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,18 +21,18 @@ export default function Layout({ children }: LayoutProps) {
         setNavbarVisible(true);
       } 
       // Hide when scrolling down, show when scrolling up
-      else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setNavbarVisible(false);
-      } else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY.current) {
         setNavbarVisible(true);
       }
       
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-white">
@@ -49,16 +49,16 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-base">
-              <a href="/#how-it-works" className="text-white hover:text-rose-200 transition">
+              <a href="/#how-it-works" className="text-gray-200 hover:text-white transition">
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-white hover:text-rose-200 transition">
+              <a href="/#for-providers" className="text-gray-200 hover:text-white transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-white hover:text-rose-200 transition">
+              <Link to="/about-us" className="text-gray-200 hover:text-white transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-white hover:text-rose-200 transition">
+              <a href="/#login" className="text-gray-200 hover:text-white transition">
                 Log In
               </a>
               <a 
@@ -71,7 +71,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Mobile menu button */}
             <button 
-              className="md:hidden text-white"
+              className="md:hidden text-gray-200"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -83,16 +83,16 @@ export default function Layout({ children }: LayoutProps) {
         {mobileMenuOpen && (
           <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20">
             <div className="px-4 py-4 space-y-4 font-sans font-medium text-base">
-              <a href="/#how-it-works" className="block text-white hover:text-rose-200">
+              <a href="/#how-it-works" className="block text-gray-200 hover:text-white">
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-white hover:text-rose-200">
+              <a href="/#for-providers" className="block text-gray-200 hover:text-white">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-white hover:text-rose-200">
+              <Link to="/about-us" className="block text-gray-200 hover:text-white">
                 About Us
               </Link>
-              <a href="/#login" className="block text-white hover:text-rose-200">
+              <a href="/#login" className="block text-gray-200 hover:text-white">
                 Log In
               </a>
               <a 

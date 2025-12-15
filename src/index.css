@@ -107,17 +107,17 @@ html {
 /* Carousel customization */
 .slick-prev:before,
 .slick-next:before {
-  color: theme('colors.ui-accent') !important;
+  color: var(--color-ui-accent) !important;
   font-size: 30px;
 }
 
 .slick-dots li button:before {
-  color: theme('colors.ui-accent') !important;
+  color: var(--color-ui-accent) !important;
   font-size: 12px;
 }
 
 .slick-dots li.slick-active button:before {
-  color: theme('colors.ui-accent') !important;
+  color: var(--color-ui-accent) !important;
 }
 
 .slick-prev {
