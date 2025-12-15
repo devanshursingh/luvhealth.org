@@ -318,7 +318,11 @@ function HomePage() {
         <div className="relative max-w-4xl mx-auto text-center z-10">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-12">
-            <UserPlus className="w-16 h-16 text-ui-accent mx-auto mb-6" />
+            <div className="flex justify-center mb-6">
+              <div className="w-20 h-20 bg-rose-500 rounded-full flex items-center justify-center">
+                <UserPlus className="w-10 h-10 text-white" />
+              </div>
+            </div>
             <h2 className="font-sans text-[48px] font-semibold text-gray-100 mb-4">
               For Providers
             </h2>
