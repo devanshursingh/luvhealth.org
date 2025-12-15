@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
@@ -11,6 +11,7 @@ export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const location = useLocation();
+  const navigate = useNavigate();
   const [isOverWhite, setIsOverWhite] = useState(location.pathname !== '/');
   const lastScrollY = useRef(0);
 
@@ -22,6 +23,43 @@ export default function Layout({ children }: LayoutProps) {
       window.scrollTo(0, 0);
     }
   };
+
+  const handleSectionLink = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    
+    if (location.pathname === '/') {
+      // Already on home page, just scroll to section
+      const element = document.getElementById(sectionId);
+      if (element) {
+        // Add offset for fixed navbar
+        const offset = 100;
+        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+        const offsetPosition = elementPosition - offset;
+        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to home page with hash - the useEffect will handle scrolling
+      navigate(`/#${sectionId}`);
+    }
+  };
+
+  // Handle hash scrolling when navigating to home page with hash
+  useEffect(() => {
+    if (location.pathname === '/' && location.hash) {
+      const sectionId = location.hash.substring(1); // Remove the #
+      // Wait for page to render, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          // Add offset for fixed navbar
+          const offset = 100;
+          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+          const offsetPosition = elementPosition - offset;
+          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        }
+      }, 150);
+    }
+  }, [location.pathname, location.hash]);
 
   useEffect(() => {
     // Set initial state based on route
@@ -77,10 +115,10 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-base">
-              <a href="/#how-it-works" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
+              <a href="/#how-it-works" onClick={(e) => handleSectionLink(e, 'how-it-works')} className={`transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 How It Works
               </a>
-              <a href="/#for-providers" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
+              <a href="/#for-providers" onClick={(e) => handleSectionLink(e, 'for-providers')} className={`transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 Providers Book A Demo
               </a>
               <Link to="/about-us" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
@@ -120,10 +158,10 @@ export default function Layout({ children }: LayoutProps) {
             isOverWhite ? 'bg-white/90 border-gray-200' : 'bg-white/10 border-white/20'
           }`}>
             <div className="px-4 py-4 space-y-4 font-sans font-medium text-base">
-              <a href="/#how-it-works" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
+              <a href="/#how-it-works" onClick={(e) => { handleSectionLink(e, 'how-it-works'); setMobileMenuOpen(false); }} className={`block transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 How It Works
               </a>
-              <a href="/#for-providers" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
+              <a href="/#for-providers" onClick={(e) => { handleSectionLink(e, 'for-providers'); setMobileMenuOpen(false); }} className={`block transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 Providers Book A Demo
               </a>
               <Link to="/about-us" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
