@@ -307,7 +307,7 @@ function HomePage() {
           style={{
             backgroundImage: `url(${doctorImg})`,
             backgroundPosition: 'center center',
-            filter: 'brightness(0.7)'
+            filter: 'brightness(0.5)'
           }}
         />
         
@@ -323,10 +323,10 @@ function HomePage() {
                 <UserPlus className="w-10 h-10 text-white" />
               </div>
             </div>
-            <h2 className="font-sans text-[48px] font-semibold text-gray-100 mb-4">
+            <h2 className="font-sans text-[48px] font-semibold text-white mb-4">
               For Providers
             </h2>
-            <p className="font-sans text-[18px] text-gray-200 mb-8 leading-[1.2]">
+            <p className="font-sans text-[18px] text-gray-100 mb-8 leading-[1.2]">
               Grow Your Practice with Self-Paying Patients!
             </p>
             <div className="mb-8">
@@ -339,7 +339,7 @@ function HomePage() {
                 Book A Demo
               </a>
             </div>
-            <p className="font-sans text-[18px] text-gray-200 mb-8 leading-[1.2]">
+            <p className="font-sans text-[18px] text-gray-100 mb-8 leading-[1.2]">
               Join our platform to connect with self-paying patients who value personalized care
             </p>
 
@@ -353,10 +353,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                     Find Self-Paying Patients
                   </h3>
-                  <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                     Connect with a growing number of patients choosing to pay directly for convenient, quality care
                   </p>
                 </div>
@@ -370,10 +370,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                     'As low as' Pricing
                   </h3>
-                  <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                     Retain ownership over your prices with the 'as low as' disclaimer for your visits.
                   </p>
                 </div>
@@ -387,10 +387,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                     Reduce Insurance Reliance
                   </h3>
-                  <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                     Wean your practice off insurance contracts that pay less and less and reduce care quality
                   </p>
                 </div>
@@ -404,10 +404,10 @@ function HomePage() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                  <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                     No Extra Work, We'll Call For Bookings
                   </h3>
-                  <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                  <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                     For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
                   </p>
                 </div>
@@ -434,10 +434,10 @@ function HomePage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                         Find Self-Paying Patients
                       </h3>
-                      <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                         Connect with a growing number of patients choosing to pay directly for convenient, quality care
                       </p>
                     </div>
@@ -452,10 +452,10 @@ function HomePage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                         'As low as' Pricing
                       </h3>
-                      <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                         Retain ownership over your prices with the 'as low as' disclaimer for your visits.
                       </p>
                     </div>
@@ -470,10 +470,10 @@ function HomePage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                         Reduce Insurance Reliance
                       </h3>
-                      <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                         Wean your practice off insurance contracts that pay less and less and reduce care quality
                       </p>
                     </div>
@@ -488,10 +488,10 @@ function HomePage() {
                       </div>
                     </div>
                     <div>
-                      <h3 className="font-sans text-[32px] font-semibold text-gray-100 mb-3">
+                      <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                         No Extra Work, We'll Call For Bookings
                       </h3>
-                      <p className="font-sans text-[18px] text-gray-200 leading-[1.2]">
+                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                         For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings
                       </p>
                     </div>
