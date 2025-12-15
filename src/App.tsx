@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import { Search, Calendar, Heart, CreditCard, UserPlus, Users, DollarSign, ShieldOff, CalendarCheck } from 'lucide-react';
-import doctorPatientImg from './assets/hero_background.png';
+import heroVideo from './assets/hero_background_video.mp4';
 import doctorImg from './assets/doctor.png';
 import Layout from './components/Layout';
 import PatientFAQs from './pages/PatientFAQs';
@@ -24,15 +24,16 @@ function HomePage() {
     <Layout>
       {/* Hero Section */}
       <section className="relative pt-40 pb-40 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        {/* Background Image with Overlay */}
+        {/* Background Video with Overlay */}
         <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={doctorPatientImg}
-            alt="Doctor and patient"
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
             className="brightness-90"
             style={{
               objectFit: 'cover',
-              objectPosition: 'var(--hero-image-position)',
               width: '100%',
               height: '100%',
               minWidth: '100%',
@@ -40,11 +41,10 @@ function HomePage() {
               position: 'absolute',
               top: 0,
               left: 0,
-              transform: 'scale(1.2)',
-              transformOrigin: 'var(--hero-image-position)',
-              display: 'block'
             }}
-          />
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
         </div>
         
         {/* Gradient Overlay */}

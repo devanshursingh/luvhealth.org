@@ -88,7 +88,7 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <Link to="/" className="cursor-pointer inline-block">
+              <Link to="/" className="cursor-pointer inline-block logo-heartbeat hover:opacity-80 transition-opacity">
                 <Logo size={64} showText={true} />
               </Link>
               <p className="font-sans text-[18px] text-gray-400 mt-4 leading-[1.2]">
@@ -102,14 +102,16 @@ export default function Layout({ children }: LayoutProps) {
                 <li><a href="/#signup" className="hover:text-white transition font-sans text-[18px]">Sign Up</a></li>
                 <li><a href="/#how-it-works" className="hover:text-white transition font-sans text-[18px]">How It Works</a></li>
                 <li><a href="/#login" className="hover:text-white transition font-sans text-[18px]">Log In</a></li>
+                <li><Link to="/patient-faqs" className="hover:text-white transition font-sans text-[18px]">FAQs</Link></li>
               </ul>
             </div>
 
             <div>
               <h3 className="font-sans font-semibold mb-4 text-[18px]">For Providers</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/#provider-signup" className="hover:text-white transition font-sans text-[18px]">Provider Sign Up</a></li>
+                <li><a href="https://calendly.com/dsinghjhu2020/30min" target="_blank" rel="noopener noreferrer" className="hover:text-white transition font-sans text-[18px]">Book A Demo</a></li>
                 <li><a href="/#for-providers" className="hover:text-white transition font-sans text-[18px]">Learn More</a></li>
+                <li><Link to="/provider-faqs" className="hover:text-white transition font-sans text-[18px]">FAQs</Link></li>
               </ul>
             </div>
           </div>
