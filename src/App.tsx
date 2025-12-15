@@ -17,7 +17,7 @@ function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
-    window.location.href = '#signup';
+    window.open('https://form.typeform.com/to/evsI3Pne', '_blank');
   };
 
   return (
@@ -99,7 +99,7 @@ function HomePage() {
                 }}
                 className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
               >
-                🏥 Ob/Gyn
+                🤰 Ob/Gyn
               </button>
               <button
                 onClick={() => {
@@ -140,12 +140,14 @@ function HomePage() {
           <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-4">
             How It Works
           </h2>
-          <p className="font-sans text-[24px] text-secondary-text text-center mb-8 leading-[1.2]">
+          <p className="font-sans text-[18px] text-secondary-text text-center mb-8 leading-[1.2]">
               Don't Wait Months. Don't Wait on Hold.
           </p>
           <div className="text-center mb-12">
             <a 
-              href="#signup"
+              href="https://form.typeform.com/to/evsI3Pne"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px]"
             >
               Find Bookings Now!
@@ -162,10 +164,10 @@ function HomePage() {
               </div>
               <div>
                 <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
-                  Book ASAP Appointments, No Waiting on Hold
+                  Book ASAP Appointments
                 </h3>
                 <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                  Find appointments ASAP with doctors who actually have time for you
+                  Find appointments quickly with doctors who actually have time for you
                 </p>
               </div>
             </div>

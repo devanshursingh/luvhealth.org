@@ -67,7 +67,7 @@ export default function Layout({ children }: LayoutProps) {
                 How It Works
               </a>
               <a href="/#for-providers" className="text-gray-200 hover:text-white transition">
-                For Providers
+                Providers Book A Demo
               </a>
               <Link to="/about-us" className="text-gray-200 hover:text-white transition">
                 About Us
@@ -101,7 +101,7 @@ export default function Layout({ children }: LayoutProps) {
                 How It Works
               </a>
               <a href="/#for-providers" className="block text-gray-200 hover:text-white">
-                For Providers
+                Providers Book A Demo
               </a>
               <Link to="/about-us" className="block text-gray-200 hover:text-white">
                 About Us
