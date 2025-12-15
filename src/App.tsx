@@ -7,6 +7,8 @@ import Layout from './components/Layout';
 import PatientFAQs from './pages/PatientFAQs';
 import ProviderFAQs from './pages/ProviderFAQs';
 import AboutUs from './pages/AboutUs';
+import TermsOfService from './pages/TermsOfService';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -524,6 +526,8 @@ export default function App() {
       <Route path="/patient-faqs" element={<PatientFAQs />} />
       <Route path="/provider-faqs" element={<ProviderFAQs />} />
       <Route path="/about-us" element={<AboutUs />} />
+      <Route path="/terms-of-service" element={<TermsOfService />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
     </Routes>
   );
 }

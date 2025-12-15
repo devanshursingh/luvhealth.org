@@ -114,8 +114,17 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 text-center text-gray-400">
-            <p className="font-sans text-[18px]">&copy; 2024 Luv Health. All rights reserved.</p>
+          <div className="border-t border-gray-800 pt-8">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 text-gray-400">
+              <Link to="/terms-of-service" className="font-sans text-[16px] hover:text-white transition">
+                Terms of Service
+              </Link>
+              <span className="hidden md:inline">|</span>
+              <Link to="/privacy-policy" className="font-sans text-[16px] hover:text-white transition">
+                Privacy Policy
+              </Link>
+            </div>
+            <p className="font-sans text-[18px] text-center mt-4">&copy; 2024 Luv Health. All rights reserved.</p>
           </div>
         </div>
       </footer>
