@@ -13,7 +13,7 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 w-full bg-white/10 backdrop-blur-md shadow-lg z-[100] border-b border-white/20">
+      <nav className="fixed top-0 left-0 right-0 w-full bg-white/10 backdrop-blur-md shadow-lg z-[100]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             {/* Logo */}
@@ -23,16 +23,16 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-base">
-              <a href="/#how-it-works" className="text-secondary-text hover:text-ui-accent transition">
+              <a href="/#how-it-works" className="text-white hover:text-rose-200 transition">
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-secondary-text hover:text-ui-accent transition">
+              <a href="/#for-providers" className="text-white hover:text-rose-200 transition">
                 For Providers
               </a>
-              <Link to="/about-us" className="text-secondary-text hover:text-ui-accent transition">
+              <Link to="/about-us" className="text-white hover:text-rose-200 transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-secondary-text hover:text-ui-accent transition">
+              <a href="/#login" className="text-white hover:text-rose-200 transition">
                 Log In
               </a>
               <a 
@@ -45,7 +45,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Mobile menu button */}
             <button 
-              className="md:hidden"
+              className="md:hidden text-white"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -55,18 +55,18 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white border-t">
+          <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20">
             <div className="px-4 py-4 space-y-4 font-sans font-medium text-base">
-              <a href="/#how-it-works" className="block text-secondary-text hover:text-ui-accent">
+              <a href="/#how-it-works" className="block text-white hover:text-rose-200">
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-secondary-text hover:text-ui-accent">
+              <a href="/#for-providers" className="block text-white hover:text-rose-200">
                 For Providers
               </a>
-              <Link to="/about-us" className="block text-secondary-text hover:text-ui-accent">
+              <Link to="/about-us" className="block text-white hover:text-rose-200">
                 About Us
               </Link>
-              <a href="/#login" className="block text-secondary-text hover:text-ui-accent">
+              <a href="/#login" className="block text-white hover:text-rose-200">
                 Log In
               </a>
               <a 
