@@ -72,11 +72,18 @@ export default function Layout({ children }: LayoutProps) {
               <Link to="/about-us" className="text-gray-200 hover:text-white transition">
                 About Us
               </Link>
-              <a href="/#login" className="text-gray-200 hover:text-white transition">
+              <a 
+                href="https://form.typeform.com/to/jtte8Dj4" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-200 hover:text-white transition"
+              >
                 Log In
               </a>
               <a 
-                href="/#signup" 
+                href="https://form.typeform.com/to/jtte8Dj4" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium text-base"
               >
                 Sign Up
@@ -106,11 +113,18 @@ export default function Layout({ children }: LayoutProps) {
               <Link to="/about-us" className="block text-gray-200 hover:text-white">
                 About Us
               </Link>
-              <a href="/#login" className="block text-gray-200 hover:text-white">
+              <a 
+                href="https://form.typeform.com/to/jtte8Dj4" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-200 hover:text-white"
+              >
                 Log In
               </a>
               <a 
-                href="/#signup" 
+                href="https://form.typeform.com/to/jtte8Dj4" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium text-base"
               >
                 Sign Up
@@ -143,9 +157,9 @@ export default function Layout({ children }: LayoutProps) {
             <div>
               <h3 className="font-sans font-semibold mb-4 text-[18px]">For Patients</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/#signup" className="hover:text-white transition font-sans text-[18px]">Sign Up</a></li>
+                <li><a href="https://form.typeform.com/to/jtte8Dj4" target="_blank" rel="noopener noreferrer" className="hover:text-white transition font-sans text-[18px]">Sign Up</a></li>
                 <li><a href="/#how-it-works" className="hover:text-white transition font-sans text-[18px]">How It Works</a></li>
-                <li><a href="/#login" className="hover:text-white transition font-sans text-[18px]">Log In</a></li>
+                <li><a href="https://form.typeform.com/to/jtte8Dj4" target="_blank" rel="noopener noreferrer" className="hover:text-white transition font-sans text-[18px]">Log In</a></li>
                 <li><Link to="/patient-faqs" className="hover:text-white transition font-sans text-[18px]">FAQs</Link></li>
               </ul>
             </div>
