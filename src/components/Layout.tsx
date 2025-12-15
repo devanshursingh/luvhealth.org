@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import Logo from './Logo';
 
@@ -11,6 +11,16 @@ export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
   const lastScrollY = useRef(0);
+  const location = useLocation();
+
+  const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,7 +53,11 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             {/* Logo */}
-            <Link to="/" className="cursor-pointer hover:opacity-80 transition-opacity logo-heartbeat">
+            <Link 
+              to="/" 
+              className="cursor-pointer hover:opacity-80 transition-opacity logo-heartbeat"
+              onClick={handleLogoClick}
+            >
               <Logo size={100} showText={true} />
             </Link>
 
@@ -114,7 +128,11 @@ export default function Layout({ children }: LayoutProps) {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <Link to="/" className="cursor-pointer inline-block logo-heartbeat hover:opacity-80 transition-opacity">
+              <Link 
+                to="/" 
+                className="cursor-pointer inline-block logo-heartbeat hover:opacity-80 transition-opacity"
+                onClick={handleLogoClick}
+              >
                 <Logo size={64} showText={true} />
               </Link>
               <p className="font-sans text-[18px] text-gray-400 mt-4 leading-[1.2]">
