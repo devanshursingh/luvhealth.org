@@ -10,8 +10,9 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [navbarVisible, setNavbarVisible] = useState(true);
-  const lastScrollY = useRef(0);
   const location = useLocation();
+  const [isOverWhite, setIsOverWhite] = useState(location.pathname !== '/');
+  const lastScrollY = useRef(0);
 
   const handleLogoClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (location.pathname === '/') {
@@ -23,8 +24,19 @@ export default function Layout({ children }: LayoutProps) {
   };
 
   useEffect(() => {
+    // Set initial state based on route
+    setIsOverWhite(location.pathname !== '/');
+    
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const viewportHeight = window.innerHeight;
+      
+      // Determine if navbar is over white content (scrolled past hero section)
+      // Hero section is typically full viewport height, so check if scrolled past ~80% of viewport
+      // Only apply scroll-based logic on home page
+      if (location.pathname === '/') {
+        setIsOverWhite(currentScrollY > viewportHeight * 0.8);
+      }
       
       // Always show navbar at the top
       if (currentScrollY < 10) {
@@ -42,13 +54,15 @@ export default function Layout({ children }: LayoutProps) {
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 w-full bg-white/10 backdrop-blur-md shadow-lg z-[100] transition-transform duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 w-full backdrop-blur-md shadow-lg z-[100] transition-all duration-300 ${
         navbarVisible ? 'translate-y-0' : '-translate-y-full'
+      } ${
+        isOverWhite ? 'bg-white/90' : 'bg-white/10'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
@@ -63,20 +77,20 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-base">
-              <a href="/#how-it-works" className="text-gray-200 hover:text-white transition">
+              <a href="/#how-it-works" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 How It Works
               </a>
-              <a href="/#for-providers" className="text-gray-200 hover:text-white transition">
+              <a href="/#for-providers" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 Providers Book A Demo
               </a>
-              <Link to="/about-us" className="text-gray-200 hover:text-white transition">
+              <Link to="/about-us" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 About Us
               </Link>
               <a 
                 href="https://form.typeform.com/to/jtte8Dj4" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-200 hover:text-white transition"
+                className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}
               >
                 Log In
               </a>
@@ -92,7 +106,7 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Mobile menu button */}
             <button 
-              className="md:hidden text-gray-200"
+              className={`md:hidden transition ${isOverWhite ? 'text-gray-900' : 'text-gray-200'}`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -102,22 +116,24 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden bg-white/10 backdrop-blur-md border-t border-white/20">
+          <div className={`md:hidden backdrop-blur-md border-t transition-colors ${
+            isOverWhite ? 'bg-white/90 border-gray-200' : 'bg-white/10 border-white/20'
+          }`}>
             <div className="px-4 py-4 space-y-4 font-sans font-medium text-base">
-              <a href="/#how-it-works" className="block text-gray-200 hover:text-white">
+              <a href="/#how-it-works" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 How It Works
               </a>
-              <a href="/#for-providers" className="block text-gray-200 hover:text-white">
+              <a href="/#for-providers" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 Providers Book A Demo
               </a>
-              <Link to="/about-us" className="block text-gray-200 hover:text-white">
+              <Link to="/about-us" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 About Us
               </Link>
               <a 
                 href="https://form.typeform.com/to/jtte8Dj4" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-gray-200 hover:text-white"
+                className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}
               >
                 Log In
               </a>
