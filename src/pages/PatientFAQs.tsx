@@ -16,8 +16,16 @@ export default function PatientFAQs() {
 
   const faqs = [
     {
+      question: "How does this work?",
+      answer: "You can find ASAP bookings with out-of-network private practice doctors at an affordable price for you. You can easily compare and choose the right doctor for you from our platform, and use their profile to learn more about their practice. Don't wait months for a medically necessary appointment. Don't wait hours on hold."
+    },
+    {
       question: "Do you take my insurance?",
-      answer: "Our platform is not insurance-based, but your doctor can provide you with a detailed receipt (superbill) that you can submit to your insurance for out-of-network reimbursement, if your insurance allows it. Our platform helps you book an ASAP appointment with an out-of-network doctor for a transparent, upfront rate. We don't accept insurance because it allows us to offer ASAP bookings, not 6 month wait times."
+      answer: "Our platform does not take insurance, but your doctor can provide you with a detailed receipt (superbill) that you can submit to your insurance for out-of-network reimbursement, if your insurance allows it. Our platform helps you book an ASAP appointment with an out-of-network doctor for a transparent, upfront rate. We don't accept insurance because it allows us to offer ASAP bookings, not 6 month wait times."
+    },
+    {
+      question: "Why can't I just go to urgent care?",
+      answer: "Urgent care is for quick, one time checkups for standard issues, not specialized medical care that requires personalized attention from a doctor. On our platform, you can book appointments with ob/gyns, pediatricians, dentists, and more for high-quality, convenient medical care that otherwise takes months."
     }
   ];
 
