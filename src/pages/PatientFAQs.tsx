@@ -17,7 +17,7 @@ export default function PatientFAQs() {
   const faqs = [
     {
       question: "How does this work?",
-      answer: "You can find ASAP bookings with out-of-network private practice doctors at an affordable price for you. You can easily compare and choose the right doctor for you from our platform, and use their profile to learn more about their practice. Don't wait months for a medically necessary appointment. Don't wait hours on hold."
+      answer: "You can find ASAP bookings with out-of-network private practice doctors at an affordable, out-of-pocket price for you. You can easily compare and choose the right doctor for you from our platform, and use their profile to learn more about their practice. Don't wait months for a medically necessary appointment. Don't wait hours on hold."
     },
     {
       question: "Do you take my insurance?",
