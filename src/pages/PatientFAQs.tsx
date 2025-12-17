@@ -25,7 +25,7 @@ export default function PatientFAQs() {
     },
     {
       question: "Why can't I just go to urgent care?",
-      answer: "Urgent care is for quick, one time checkups for standard issues, not specialized medical care that requires personalized attention from a doctor. On our platform, you can book appointments with ob/gyns, pediatricians, dentists, and more for high-quality, convenient medical care that otherwise takes months."
+      answer: "Imagine waiting in line at urgent care for hours, only to be told that you need to see a specialist. Urgent care is for one time checkups for standard issues, not personalized medical care from your doctor. On our platform, you can book appointments with ob/gyns, pediatricians, dentists, and more for high-quality, convenient medical care that otherwise takes months."
     }
   ];
 
