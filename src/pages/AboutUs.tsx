@@ -10,7 +10,7 @@ const team = [
     name: "Devanshu Singh",
     title: "Co-Founder, Luv Health Inc.",
     credentials: "PhD Candidate at University of Washington in Political Science",
-    bio: "After a recent major illness, Devanshu mas made it his mission to create new options for patients and healthcare providers, combining an AI background with research expertise in political science. Hailing from a family of doctors, Devanshu has grown up around the healthcare system and knows the ins and outs of doctor-patient interactions.",
+    bio: "After a recent illness, Devanshu mas made it his mission to create new options for patients and healthcare providers, combining an AI background with research expertise in political science. Hailing from a family of doctors, Devanshu has grown up around the healthcare system and knows the ins and outs of doctor-patient interactions.",
     linkedin: "https://www.linkedin.com/in/dsingh33",
     photo: devanshuPhoto,
   },
