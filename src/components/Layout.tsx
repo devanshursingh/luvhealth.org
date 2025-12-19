@@ -31,11 +31,7 @@ export default function Layout({ children }: LayoutProps) {
       // Already on home page, just scroll to section
       const element = document.getElementById(sectionId);
       if (element) {
-        // Add offset for fixed navbar
-        const offset = 100;
-        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-        const offsetPosition = elementPosition - offset;
-        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     } else {
       // Navigate to home page with hash - the useEffect will handle scrolling
@@ -51,11 +47,7 @@ export default function Layout({ children }: LayoutProps) {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          // Add offset for fixed navbar
-          const offset = 100;
-          const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
-          const offsetPosition = elementPosition - offset;
-          window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       }, 150);
     }
