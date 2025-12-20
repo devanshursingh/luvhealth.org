@@ -116,22 +116,6 @@ export default function Layout({ children }: LayoutProps) {
               <Link to="/about-us" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 About Us
               </Link>
-              <a 
-                href="https://form.typeform.com/to/jtte8Dj4" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}
-              >
-                Log In
-              </a>
-              <a 
-                href="https://form.typeform.com/to/jtte8Dj4" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-ui-accent text-white px-6 py-2 rounded-full hover:bg-rose-600 transition font-sans font-medium text-base"
-              >
-                Sign Up
-              </a>
             </div>
 
             {/* Mobile menu button */}
@@ -159,22 +143,6 @@ export default function Layout({ children }: LayoutProps) {
               <Link to="/about-us" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 About Us
               </Link>
-              <a 
-                href="https://form.typeform.com/to/jtte8Dj4" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}
-              >
-                Log In
-              </a>
-              <a 
-                href="https://form.typeform.com/to/jtte8Dj4" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block bg-ui-accent text-white px-6 py-2 rounded-full text-center hover:bg-rose-600 font-sans font-medium text-base"
-              >
-                Sign Up
-              </a>
             </div>
           </div>
         )}

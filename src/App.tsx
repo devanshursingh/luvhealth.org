@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { Search, Calendar, Heart, CreditCard } from 'lucide-react';
+import { Search, Calendar, Heart, CreditCard, ChevronDown } from 'lucide-react';
 import heroVideo from './assets/hero_background_video.mp4';
 import Layout from './components/Layout';
 import PatientFAQs from './pages/PatientFAQs';
@@ -15,10 +15,30 @@ import "slick-carousel/slick/slick-theme.css";
 
 function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
+  const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
 
   const handleSearch = () => {
     window.open('https://form.typeform.com/to/jtte8Dj4', '_blank');
   };
+
+  const toggleFAQ = (index: number) => {
+    setOpenFAQIndex(openFAQIndex === index ? null : index);
+  };
+
+  const patientFAQs = [
+    {
+      question: "How does this work?",
+      answer: "You can find ASAP bookings with out-of-network private practice doctors at an affordable, out-of-pocket price for you. You can easily compare and choose the right doctor for you from our platform, and use their profile to learn more about their practice. Don't wait months for a medically necessary appointment. Don't wait hours on hold."
+    },
+    {
+      question: "Do you take my insurance?",
+      answer: "Our platform does not take insurance, but your doctor can provide you with a detailed receipt (superbill) that you can submit to your insurance for out-of-network reimbursement, if your insurance allows it. Our platform helps you book an ASAP appointment with an out-of-network doctor for a transparent, upfront rate. We don't accept insurance because it allows us to offer ASAP bookings, not 6 month wait times."
+    },
+    {
+      question: "Why can't I just go to urgent care?",
+      answer: "Imagine waiting in line at urgent care for hours, only to be told that you need to see a specialist. Urgent care is for one time checkups for standard issues, not personalized medical care from your doctor. On our platform, you can book appointments with ob/gyns, pediatricians, dentists, and more for high-quality, convenient medical care that otherwise takes months."
+    }
+  ];
 
   const howItWorksSteps = [
     {
@@ -239,13 +259,41 @@ function HomePage() {
 
       {/* FAQs Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <Link 
-            to="/patient-faqs"
-            className="inline-block border-2 border-ui-accent text-ui-accent px-8 py-4 rounded-full hover:bg-ui-accent hover:text-white transition font-sans font-semibold text-[18px]"
-          >
-            FAQs
-          </Link>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-16">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="space-y-6">
+            {patientFAQs.map((faq, index) => (
+              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full px-6 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                >
+                  <h3 className="font-sans text-[32px] font-semibold text-primary-text pr-4">
+                    {faq.question}
+                  </h3>
+                  <ChevronDown
+                    className={`flex-shrink-0 w-8 h-8 text-primary-text transition-transform duration-300 ${
+                      openFAQIndex === index ? 'transform rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openFAQIndex === index ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="px-6 pb-6">
+                    <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
