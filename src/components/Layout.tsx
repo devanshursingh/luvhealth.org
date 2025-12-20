@@ -110,9 +110,9 @@ export default function Layout({ children }: LayoutProps) {
               <a href="/#how-it-works" onClick={(e) => handleSectionLink(e, 'how-it-works')} className={`transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 How It Works
               </a>
-              <a href="/#for-providers" onClick={(e) => handleSectionLink(e, 'for-providers')} className={`transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
+              <Link to="/for-providers" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 Providers Book A Demo
-              </a>
+              </Link>
               <Link to="/about-us" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 About Us
               </Link>
@@ -153,9 +153,9 @@ export default function Layout({ children }: LayoutProps) {
               <a href="/#how-it-works" onClick={(e) => { handleSectionLink(e, 'how-it-works'); setMobileMenuOpen(false); }} className={`block transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 How It Works
               </a>
-              <a href="/#for-providers" onClick={(e) => { handleSectionLink(e, 'for-providers'); setMobileMenuOpen(false); }} className={`block transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
+              <Link to="/for-providers" onClick={() => setMobileMenuOpen(false)} className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 Providers Book A Demo
-              </a>
+              </Link>
               <Link to="/about-us" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
                 About Us
               </Link>
@@ -214,7 +214,7 @@ export default function Layout({ children }: LayoutProps) {
               <h3 className="font-sans font-semibold mb-4 text-[18px]">For Providers</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="https://calendly.com/dsinghjhu2020/30min" target="_blank" rel="noopener noreferrer" className="hover:text-white transition font-sans text-[18px]">Book A Demo</a></li>
-                <li><a href="/#for-providers" className="hover:text-white transition font-sans text-[18px]">Learn More</a></li>
+                <li><Link to="/for-providers" className="hover:text-white transition font-sans text-[18px]">Learn More</Link></li>
                 <li><Link to="/provider-faqs" className="hover:text-white transition font-sans text-[18px]">FAQs</Link></li>
               </ul>
             </div>
