@@ -37,6 +37,10 @@ function HomePage() {
     {
       question: "Why can't I just go to urgent care?",
       answer: "Imagine waiting in line at urgent care for hours, only to be told that you need to see a specialist. Urgent care is for one time checkups for standard issues, not personalized medical care from your doctor. On our platform, you can book appointments with ob/gyns, pediatricians, dentists, and more for high-quality, convenient medical care that otherwise takes months."
+    },
+    {
+      question: "How can I send my electronic medical records (EMRs) to the doctor?",
+      answer: "You can bring your electronic medical records (EMRs) to your appointment in a digital format, such as on a USB drive, via email, or through a secure patient portal if your previous provider offers one. You can also request that your previous healthcare provider send your records directly to your new doctor. Many practices have patient portals where you can download your records, or you can request them through your provider's medical records department."
     }
   ];
 
@@ -178,8 +182,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+      {/* How It Works & FAQs Section */}
+      <section id="how-it-works" className="pt-20 pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-4">
             How It Works
@@ -254,45 +258,43 @@ function HomePage() {
               })}
             </Slider>
           </div>
-        </div>
-      </section>
 
-      {/* FAQs Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-16">
-            Frequently Asked Questions
-          </h2>
+          {/* FAQs Section */}
+          <div className="max-w-4xl mx-auto mt-20">
+            <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-16">
+              Frequently Asked Questions
+            </h2>
 
-          <div className="space-y-6">
-            {patientFAQs.map((faq, index) => (
-              <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full px-6 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
-                >
-                  <h3 className="font-sans text-[32px] font-semibold text-primary-text pr-4">
-                    {faq.question}
-                  </h3>
-                  <ChevronDown
-                    className={`flex-shrink-0 w-8 h-8 text-primary-text transition-transform duration-300 ${
-                      openFAQIndex === index ? 'transform rotate-180' : ''
+            <div className="space-y-6">
+              {patientFAQs.map((faq, index) => (
+                <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full px-6 py-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                  >
+                    <h3 className="font-sans text-[32px] font-semibold text-primary-text pr-4">
+                      {faq.question}
+                    </h3>
+                    <ChevronDown
+                      className={`flex-shrink-0 w-8 h-8 text-primary-text transition-transform duration-300 ${
+                        openFAQIndex === index ? 'transform rotate-180' : ''
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      openFAQIndex === index ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                     }`}
-                  />
-                </button>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    openFAQIndex === index ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
-                  }`}
-                >
-                  <div className="px-6 pb-6">
-                    <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
-                      {faq.answer}
-                    </p>
+                  >
+                    <div className="px-6 pb-6">
+                      <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                        {faq.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
