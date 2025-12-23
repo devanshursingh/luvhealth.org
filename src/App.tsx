@@ -46,12 +46,12 @@ function HomePage() {
 
   const howItWorksSteps = [
     {
-      icon: Search,
+      icon: Calendar,
       title: 'Book ASAP Appointments',
       description: 'Find appointments quickly with doctors who actually have time for you'
     },
     {
-      icon: Calendar,
+      icon: Search,
       title: 'Search High-Quality Doctors',
       description: 'Find doctors who take a genuine interest in your health and prioritize quality over quantity'
     },
@@ -103,7 +103,7 @@ function HomePage() {
           <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
             See Your Doctor ASAP,<br />No Phone Calls Required
           </h1>
-          <p className="font-sans text-[18px] text-white mb-8 drop-shadow-md leading-[1.2]">
+          <p className="font-sans text-[24px] font-semibold text-white mb-8 drop-shadow-md leading-[1.2]">
             Book hard-to-find doctors online for ASAP appointments
           </p>
 
@@ -198,7 +198,7 @@ function HomePage() {
           <h2 className="font-sans text-[48px] font-semibold text-center text-primary-text mb-4">
             How It Works
           </h2>
-          <p className="font-sans text-[18px] text-secondary-text text-center mb-8 leading-[1.2]">
+          <p className="font-sans text-[24px] font-semibold text-secondary-text text-center mb-8 leading-[1.2]">
               Don't Wait Months. Don't Wait on Hold.
           </p>
           <div className="text-center mb-12">
@@ -208,7 +208,7 @@ function HomePage() {
               rel="noopener noreferrer"
               className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px]"
             >
-              Find Bookings Now!
+              Find Doctors Now!
             </a>
           </div>
 
@@ -227,9 +227,9 @@ function HomePage() {
                     <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-3">
                       {step.title}
                     </h3>
-                    <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                    {/* <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
                       {step.description}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               );
@@ -259,9 +259,9 @@ function HomePage() {
                       <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
                         {step.title}
                       </h3>
-                      <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
+                      {/* <p className="font-sans text-[18px] text-secondary-text leading-[1.2]">
                         {step.description}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 );
