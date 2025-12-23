@@ -103,7 +103,7 @@ function HomePage() {
           <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
             See Your Doctor ASAP,<br />No Phone Calls Required
           </h1>
-          <p className="font-sans text-[24px] font-semibold text-white mb-8 drop-shadow-md leading-[1.2]">
+          <p className="font-sans text-[24px] text-white mb-8 drop-shadow-md leading-[1.2]">
             Book hard-to-find doctors online for ASAP appointments
           </p>
 

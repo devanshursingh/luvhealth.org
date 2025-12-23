@@ -59,7 +59,7 @@ export default function Logo({
             fontSize: `${size * 0.36}px` // Proportional to logo size (roughly 36% of logo size)
           }}
         >
-          luv medical
+          luv health
         </span>
       )}
     </div>
