@@ -189,10 +189,10 @@ export default function ForProviders() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-2xl mx-auto text-center">
           <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
-            Not ready for a demo yet?
+            Want to learn more?
           </h3>
           <p className="font-sans text-[18px] text-secondary-text mb-8 leading-[1.2]">
-            Leave your email and we'll keep you updated on how we're helping providers grow their practices.
+            Stay updated on how we're helping providers grow their practices with self-paying patients.
           </p>
           <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
             <input
