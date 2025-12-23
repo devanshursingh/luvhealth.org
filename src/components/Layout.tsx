@@ -56,6 +56,12 @@ export default function Layout({ children }: LayoutProps) {
   // Navigation items configuration
   const navigationItems = [
     {
+      type: 'external' as const,
+      label: 'Find Doctors',
+      href: 'https://form.typeform.com/to/jtte8Dj4',
+      showOnRoutes: ['/for-providers'],
+    },
+    {
       type: 'anchor' as const,
       label: 'How It Works',
       href: '/#how-it-works',
@@ -73,12 +79,6 @@ export default function Layout({ children }: LayoutProps) {
       label: 'About Us',
       to: '/about-us',
       hideOnRoutes: [] as string[],
-    },
-    {
-      type: 'external' as const,
-      label: 'Find Doctors',
-      href: 'https://form.typeform.com/to/jtte8Dj4',
-      showOnRoutes: ['/for-providers'],
     },
   ];
 

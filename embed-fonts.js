@@ -35,3 +35,8 @@ const updatedSvg = svgContent.replace(
 writeFileSync('public/thumbnail.svg', updatedSvg);
 console.log('Fonts embedded in thumbnail.svg');
 
+
+
+
+
+

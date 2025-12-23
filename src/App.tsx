@@ -107,24 +107,6 @@ function HomePage() {
             Book hard-to-find doctors online for ASAP appointments
           </p>
 
-          {/* Dual CTAs for Patients and Providers */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            {/* Primary CTA - Patients */}
-            <button
-              onClick={handleSearch}
-              className="bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px] shadow-lg hover:shadow-xl whitespace-nowrap w-full sm:w-auto"
-            >
-              Find Doctors
-            </button>
-            {/* Secondary CTA - Providers */}
-            <Link
-              to="/for-providers"
-              className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full hover:bg-white/20 transition font-sans font-semibold text-[18px] shadow-lg hover:shadow-xl whitespace-nowrap w-full sm:w-auto text-center"
-            >
-              Providers Book A Demo
-            </Link>
-          </div>
-
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-2 bg-white/95 backdrop-blur-sm p-2 sm:p-2 rounded-2xl sm:rounded-full shadow-2xl">
@@ -145,6 +127,16 @@ function HomePage() {
               >
                 Find Doctors
               </button>
+            </div>
+            
+            {/* Provider CTA - Subtle secondary action */}
+            <div className="mt-4 mb-2">
+              <Link
+                to="/for-providers"
+                className="inline-block font-sans text-[16px] text-white/80 hover:text-white transition underline underline-offset-4 decoration-white/50 hover:decoration-white"
+              >
+                Are you a provider? Book a demo →
+              </Link>
             </div>
             
             {/* Suggested Search Items */}
@@ -292,7 +284,7 @@ function HomePage() {
                   >
                     <h3 className="font-sans text-[32px] font-semibold text-primary-text pr-4">
                       {faq.question}
-                    </h3>
+                      </h3>
                     <ChevronDown
                       className={`flex-shrink-0 w-8 h-8 text-primary-text transition-transform duration-300 ${
                         openFAQIndex === index ? 'transform rotate-180' : ''
@@ -310,10 +302,10 @@ function HomePage() {
                       </p>
                     </div>
                   </div>
-                </div>
-              ))}
             </div>
+              ))}
           </div>
+        </div>
         </div>
       </section>
 

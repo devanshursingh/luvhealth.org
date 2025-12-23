@@ -38,3 +38,8 @@ writeFileSync(join(__dirname, 'thumbnail-render.html'), htmlContent);
 console.log('Created thumbnail-render.html');
 console.log('You can open this in a browser and take a screenshot, or use a tool like Puppeteer to automate it.');
 
+
+
+
+
+
