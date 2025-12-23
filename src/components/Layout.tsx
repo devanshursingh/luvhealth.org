@@ -53,6 +53,34 @@ export default function Layout({ children }: LayoutProps) {
     }
   }, [location.pathname, location.hash]);
 
+  // Navigation items configuration
+  const navigationItems = [
+    {
+      type: 'anchor' as const,
+      label: 'How It Works',
+      href: '/#how-it-works',
+      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleSectionLink(e, 'how-it-works'),
+      hideOnRoutes: [] as string[],
+    },
+    {
+      type: 'link' as const,
+      label: 'Providers Book A Demo',
+      to: '/for-providers',
+      hideOnRoutes: ['/for-providers'],
+    },
+    {
+      type: 'link' as const,
+      label: 'About Us',
+      to: '/about-us',
+      hideOnRoutes: [] as string[],
+    },
+  ];
+
+  // Filter navigation items based on current route
+  const visibleNavItems = navigationItems.filter(
+    (item) => !item.hideOnRoutes.includes(location.pathname)
+  );
+
   useEffect(() => {
     // Set initial state based on route
     setIsOverWhite(location.pathname !== '/');
@@ -107,15 +135,26 @@ export default function Layout({ children }: LayoutProps) {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8 font-sans font-medium text-base">
-              <a href="/#how-it-works" onClick={(e) => handleSectionLink(e, 'how-it-works')} className={`transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
-                How It Works
-              </a>
-              <Link to="/for-providers" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
-                Providers Book A Demo
-              </Link>
-              <Link to="/about-us" className={`transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
-                About Us
-              </Link>
+              {visibleNavItems.map((item, index) => {
+                const baseClasses = `transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`;
+                if (item.type === 'anchor') {
+                  return (
+                    <a
+                      key={index}
+                      href={item.href}
+                      onClick={item.onClick}
+                      className={`${baseClasses} cursor-pointer`}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link key={index} to={item.to} className={baseClasses}>
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
 
             {/* Mobile menu button */}
@@ -134,15 +173,34 @@ export default function Layout({ children }: LayoutProps) {
             isOverWhite ? 'bg-white/90 border-gray-200' : 'bg-white/10 border-white/20'
           }`}>
             <div className="px-4 py-4 space-y-4 font-sans font-medium text-base">
-              <a href="/#how-it-works" onClick={(e) => { handleSectionLink(e, 'how-it-works'); setMobileMenuOpen(false); }} className={`block transition cursor-pointer ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
-                How It Works
-              </a>
-              <Link to="/for-providers" onClick={() => setMobileMenuOpen(false)} className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
-                Providers Book A Demo
-              </Link>
-              <Link to="/about-us" className={`block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`}>
-                About Us
-              </Link>
+              {visibleNavItems.map((item, index) => {
+                const baseClasses = `block transition ${isOverWhite ? 'text-gray-900 hover:text-gray-700' : 'text-gray-200 hover:text-white'}`;
+                if (item.type === 'anchor') {
+                  return (
+                    <a
+                      key={index}
+                      href={item.href}
+                      onClick={(e) => {
+                        item.onClick?.(e);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`${baseClasses} cursor-pointer`}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                return (
+                  <Link
+                    key={index}
+                    to={item.to}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={baseClasses}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         )}

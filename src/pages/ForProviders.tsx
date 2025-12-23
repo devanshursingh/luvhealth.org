@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { UserPlus, Users, DollarSign, ShieldOff, CalendarCheck, ChevronDown } from 'lucide-react';
+import { Stethoscope, Plus, Users, DollarSign, ShieldOff, CalendarCheck, ChevronDown } from 'lucide-react';
 import doctorPatientImg from '../assets/doctor-patient.png';
 import Layout from '../components/Layout';
 import Slider from "react-slick";
@@ -89,16 +89,14 @@ export default function ForProviders() {
         <div className="relative max-w-4xl mx-auto text-center z-10 pt-32">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-12">
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-rose-500 rounded-full flex items-center justify-center">
-                <UserPlus className="w-10 h-10 text-white" />
+              <div className="w-20 h-20 bg-rose-500 rounded-full flex items-center justify-center relative">
+                <Stethoscope className="w-10 h-10 text-white" />
+                <Plus className="w-5 h-5 text-white absolute -bottom-1 -right-1 bg-rose-600 rounded-full p-0.5" />
               </div>
             </div>
             <h2 className="font-sans text-[48px] font-semibold text-white mb-4">
-              For Providers
-            </h2>
-            <p className="font-sans text-[18px] text-gray-100 mb-8 leading-[1.2]">
               Grow Your Practice with Self-Paying Patients!
-            </p>
+            </h2>
             <div className="mb-8">
               <a 
                 href="https://calendly.com/dsinghjhu2020/30min"
