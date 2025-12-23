@@ -74,12 +74,26 @@ export default function Layout({ children }: LayoutProps) {
       to: '/about-us',
       hideOnRoutes: [] as string[],
     },
+    {
+      type: 'external' as const,
+      label: 'Find Doctors',
+      href: 'https://form.typeform.com/to/jtte8Dj4',
+      showOnRoutes: ['/for-providers'],
+    },
   ];
 
   // Filter navigation items based on current route
-  const visibleNavItems = navigationItems.filter(
-    (item) => !item.hideOnRoutes.includes(location.pathname)
-  );
+  const visibleNavItems = navigationItems.filter((item) => {
+    // Hide items that should be hidden on current route
+    if (item.hideOnRoutes && item.hideOnRoutes.includes(location.pathname)) {
+      return false;
+    }
+    // Show items that should only appear on specific routes
+    if ('showOnRoutes' in item && item.showOnRoutes && !item.showOnRoutes.includes(location.pathname)) {
+      return false;
+    }
+    return true;
+  });
 
   useEffect(() => {
     // Set initial state based on route
@@ -149,6 +163,19 @@ export default function Layout({ children }: LayoutProps) {
                     </a>
                   );
                 }
+                if (item.type === 'external') {
+                  return (
+                    <a
+                      key={index}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={baseClasses}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
                 return (
                   <Link key={index} to={item.to} className={baseClasses}>
                     {item.label}
@@ -185,6 +212,20 @@ export default function Layout({ children }: LayoutProps) {
                         setMobileMenuOpen(false);
                       }}
                       className={`${baseClasses} cursor-pointer`}
+                    >
+                      {item.label}
+                    </a>
+                  );
+                }
+                if (item.type === 'external') {
+                  return (
+                    <a
+                      key={index}
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={baseClasses}
                     >
                       {item.label}
                     </a>

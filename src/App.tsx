@@ -103,9 +103,27 @@ function HomePage() {
           <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
             See Your Doctor ASAP,<br />No Phone Calls Required
           </h1>
-          <p className="font-sans text-[18px] text-white mb-12 drop-shadow-md leading-[1.2]">
+          <p className="font-sans text-[18px] text-white mb-8 drop-shadow-md leading-[1.2]">
             Book hard-to-find doctors online for ASAP appointments
           </p>
+
+          {/* Dual CTAs for Patients and Providers */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {/* Primary CTA - Patients */}
+            <button
+              onClick={handleSearch}
+              className="bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px] shadow-lg hover:shadow-xl whitespace-nowrap w-full sm:w-auto"
+            >
+              Find Doctors
+            </button>
+            {/* Secondary CTA - Providers */}
+            <Link
+              to="/for-providers"
+              className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-full hover:bg-white/20 transition font-sans font-semibold text-[18px] shadow-lg hover:shadow-xl whitespace-nowrap w-full sm:w-auto text-center"
+            >
+              Providers Book A Demo
+            </Link>
+          </div>
 
           {/* Search Bar */}
           <div className="max-w-2xl mx-auto">
