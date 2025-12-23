@@ -10,23 +10,23 @@ import "slick-carousel/slick/slick-theme.css";
 const providerBenefits = [
   {
     icon: Users,
-    title: 'Find Self-Paying Patients',
-    description: 'Connect with a growing number of patients choosing to pay directly for convenient, quality care'
+    title: 'Find Self-Paying Patients, Reduce Insurance Reliance',
+    // description: 'Connect with a growing number of patients choosing to pay directly for convenient, quality care'
   },
   {
     icon: DollarSign,
-    title: "'As low as' Pricing",
-    description: "Retain ownership over your patient visit price with the 'as low as' disclaimer for your visits"
+    title: "'As low as' Pricing Disclaimers",
+    // description: "Retain ownership over your patient visit price with the 'as low as' disclaimer for your visits"
   },
   {
     icon: ShieldOff,
     title: 'Reduce Insurance Reliance',
-    description: 'Wean your practice off insurance contracts that pay less and less and reduce care quality'
+    // description: 'Wean your practice off insurance contracts that pay less and less and reduce care quality'
   },
   {
     icon: CalendarCheck,
     title: "No Extra Work, We'll Call For Bookings",
-    description: 'For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings'
+    // description: 'For seamless integration with no extra work for your office, our AI will robocall with patient info for bookings'
   }
 ];
 
@@ -126,9 +126,9 @@ export default function ForProviders() {
                       <h3 className="font-sans text-[32px] font-semibold text-white mb-3">
                         {benefit.title}
                       </h3>
-                      <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
+                      {/* <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                         {benefit.description}
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                 );
@@ -158,9 +158,9 @@ export default function ForProviders() {
                         <h3 className="font-sans text-[32px] font-semibold text-white mb-4">
                           {benefit.title}
                         </h3>
-                        <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
+                        {/* <p className="font-sans text-[18px] text-gray-100 leading-[1.2]">
                           {benefit.description}
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   );
