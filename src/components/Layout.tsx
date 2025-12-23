@@ -70,7 +70,7 @@ export default function Layout({ children }: LayoutProps) {
     },
     {
       type: 'link' as const,
-      label: 'Providers: Grow Your Practice',
+      label: 'Providers: Find Self-Paying Patients',
       to: '/for-providers',
       hideOnRoutes: ['/for-providers'],
     },

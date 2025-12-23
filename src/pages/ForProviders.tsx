@@ -220,7 +220,7 @@ export default function ForProviders() {
           rel="noopener noreferrer"
           className="block w-full bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px] text-center"
         >
-          Grow Your Practice
+          Book A Demo
         </a>
       </div>
     </Layout>

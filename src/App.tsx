@@ -135,7 +135,7 @@ function HomePage() {
                 to="/for-providers"
                 className="inline-block font-sans text-[16px] text-white/80 hover:text-white transition underline underline-offset-4 decoration-white/50 hover:decoration-white"
               >
-                Are you a provider? Grow your practice →
+                Are you a provider? Find self-paying patients →
               </Link>
             </div>
             
