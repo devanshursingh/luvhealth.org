@@ -10,7 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 const providerBenefits = [
   {
     icon: Users,
-    title: 'Find Self-Paying Patients, Reduce Insurance Reliance',
+    title: 'Find Self-Paying Patients',
     // description: 'Connect with a growing number of patients choosing to pay directly for convenient, quality care'
   },
   {
@@ -71,7 +71,7 @@ export default function ForProviders() {
   return (
     <Layout>
       {/* For Providers Section */}
-      <section className="relative min-h-screen py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative min-h-screen py-20 pb-24 md:pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background Image with Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -86,18 +86,19 @@ export default function ForProviders() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/15 to-black/25" />
         
         {/* Content - Add relative positioning */}
-        <div className="relative max-w-4xl mx-auto text-center z-10 pt-32">
+        <div className="relative max-w-4xl mx-auto text-center z-10 pt-40 md:pt-32">
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl shadow-lg p-12">
             <div className="flex justify-center mb-6">
               <div className="w-20 h-20 bg-rose-500 rounded-full flex items-center justify-center relative">
                 <Stethoscope className="w-10 h-10 text-white" />
-                <Plus className="w-5 h-5 text-white absolute -bottom-1 -right-1 bg-rose-600 rounded-full p-0.5" />
+                <Plus className="w-7 h-7 text-white absolute -bottom-1 -right-1 bg-rose-600 rounded-full p-1" />
               </div>
             </div>
             <h2 className="font-sans text-[48px] font-semibold text-white mb-4">
               Grow Your Practice with Self-Paying Patients!
             </h2>
-            <div className="mb-8">
+            {/* Desktop CTA */}
+            <div className="mb-8 hidden md:block">
               <a 
                 href="https://calendly.com/dsinghjhu2020/30min"
                 target="_blank"
@@ -107,7 +108,7 @@ export default function ForProviders() {
                 Book A Demo
               </a>
             </div>
-            <p className="font-sans text-[18px] text-gray-100 mb-8 leading-[1.2]">
+            <p className="font-sans text-[24px] text-gray-100 mb-8 leading-[1.2]">
               Join our platform to connect with self-paying patients who value personalized care
             </p>
 
@@ -210,6 +211,18 @@ export default function ForProviders() {
           </div>
         </div>
       </section>
+
+      {/* Mobile Sticky CTA - Best practice for mobile UX */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg p-4">
+        <a 
+          href="https://calendly.com/dsinghjhu2020/30min"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block w-full bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px] text-center"
+        >
+          Book A Demo
+        </a>
+      </div>
     </Layout>
   );
 }
