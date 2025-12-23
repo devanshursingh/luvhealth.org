@@ -52,12 +52,12 @@ function HomePage() {
     },
     {
       icon: Search,
-      title: 'Search High-Quality Doctors',
+      title: 'Search High-Quality Doctors Who Care',
       description: 'Find doctors who take a genuine interest in your health and prioritize quality over quantity'
     },
     {
       icon: Heart,
-      title: 'Your Choice',
+      title: 'Your Choice, Not Insurance',
       description: 'Pick the right doctor for you, not just the ones your insurance approves'
     },
     {
@@ -103,7 +103,7 @@ function HomePage() {
           <h1 className="font-sans text-[48px] sm:text-[56px] font-semibold text-white mb-6 drop-shadow-lg leading-tight">
             See Your Doctor ASAP,<br />No Phone Calls Required
           </h1>
-          <p className="font-sans text-[24px] text-white mb-8 drop-shadow-md leading-[1.2]">
+          <p className="font-sans text-[18px] text-white mb-8 drop-shadow-md leading-[1.2]">
             Book hard-to-find doctors online for ASAP appointments
           </p>
 
@@ -125,7 +125,7 @@ function HomePage() {
                 onClick={handleSearch}
                 className="bg-ui-accent text-white px-8 py-4 rounded-xl sm:rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px] whitespace-nowrap shadow-lg hover:shadow-xl w-full sm:w-auto"
               >
-                Find Doctors
+                Find Doctors Now!
               </button>
             </div>
             
