@@ -32,6 +32,8 @@ const providerBenefits = [
 
 export default function ForProviders() {
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+  const [email, setEmail] = useState('');
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,6 +41,17 @@ export default function ForProviders() {
 
   const toggleFAQ = (index: number) => {
     setOpenFAQIndex(openFAQIndex === index ? null : index);
+  };
+
+  const handleEmailSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // TODO: Integrate with your email collection service (e.g., Formspree, Mailchimp, etc.)
+    console.log('Provider email submitted:', email);
+    // For now, just show success message
+    setEmailSubmitted(true);
+    setEmail('');
+    // Reset success message after 5 seconds
+    setTimeout(() => setEmailSubmitted(false), 5000);
   };
 
   const providerFAQs = [
@@ -169,6 +182,39 @@ export default function ForProviders() {
               </Slider>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Email Collection Section - Softer CTA */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-2xl mx-auto text-center">
+          <h3 className="font-sans text-[32px] font-semibold text-primary-text mb-4">
+            Not ready for a demo yet?
+          </h3>
+          <p className="font-sans text-[18px] text-secondary-text mb-8 leading-[1.2]">
+            Leave your email and we'll keep you updated on how we're helping providers grow their practices.
+          </p>
+          <form onSubmit={handleEmailSubmit} className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+              className="flex-1 px-6 py-4 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent text-[16px] font-sans bg-white"
+            />
+            <button
+              type="submit"
+              className="bg-white border-2 border-rose-500 text-rose-600 px-8 py-4 rounded-full hover:bg-rose-50 transition font-sans font-semibold text-[16px] whitespace-nowrap"
+            >
+              Stay Updated
+            </button>
+          </form>
+          {emailSubmitted && (
+            <p className="mt-4 font-sans text-[16px] text-green-600">
+              Thanks! We'll be in touch soon.
+            </p>
+          )}
         </div>
       </section>
 
