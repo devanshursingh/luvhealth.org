@@ -70,7 +70,7 @@ export default function Layout({ children }: LayoutProps) {
     },
     {
       type: 'link' as const,
-      label: 'Providers Book A Demo',
+      label: 'Providers: Grow Your Practice',
       to: '/for-providers',
       hideOnRoutes: ['/for-providers'],
     },
