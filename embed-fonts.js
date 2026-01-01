@@ -4,8 +4,6 @@ import { execSync } from 'child_process';
 const poppinsRegular = execSync('base64 -i /tmp/poppins-regular.woff2', { encoding: 'utf-8' }).trim();
 const poppinsSemibold = execSync('base64 -i /tmp/poppins-semibold.woff2', { encoding: 'utf-8' }).trim();
 
-const svgContent = readFileSync('public/thumbnail.svg', 'utf-8');
-
 const fontEmbed = `
   <defs>
     <style>
@@ -26,14 +24,23 @@ const fontEmbed = `
     </style>
   </defs>`;
 
-// Replace the old defs/style section with the embedded font version
+// Process thumbnail.svg
+const svgContent = readFileSync('public/thumbnail.svg', 'utf-8');
 const updatedSvg = svgContent.replace(
   /<defs>[\s\S]*?<\/defs>/,
   fontEmbed
 );
-
 writeFileSync('public/thumbnail.svg', updatedSvg);
 console.log('Fonts embedded in thumbnail.svg');
+
+// Process thumbnail-clean.svg
+const cleanSvgContent = readFileSync('public/thumbnail-clean.svg', 'utf-8');
+const updatedCleanSvg = cleanSvgContent.replace(
+  /<defs>[\s\S]*?<\/defs>/,
+  fontEmbed
+);
+writeFileSync('public/thumbnail-clean.svg', updatedCleanSvg);
+console.log('Fonts embedded in thumbnail-clean.svg');
 
 
 

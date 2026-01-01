@@ -43,9 +43,20 @@
 }
 
 :root {
-  --color-primary: #111827;
-  --color-secondary: #374151;
-  --color-ui-accent: #f43f5e;
+  /* Brand Colors */
+  --color-brand-primary: #f43f5e;     /* Rose/Pink - Primary brand color (logo, CTAs, accents) */
+  --color-brand-secondary: #ffffff;    /* White - Secondary brand color (contrast, text on colored backgrounds) */
+  --color-brand-tertiary: #151f28;     /* Dark gray - Tertiary brand color (dark backgrounds like footer, alternative to white) */
+  
+  /* UI/Text Colors (for text hierarchy and UI elements) */
+  --color-text-primary: #111827;      /* Dark gray - Primary text color */
+  --color-text-secondary: #374151;     /* Medium gray - Secondary text color */
+  
+  /* Legacy/Backward Compatibility */
+  --color-primary: #111827;            /* Alias for --color-text-primary */
+  --color-secondary: #374151;          /* Alias for --color-text-secondary */
+  --color-ui-accent: #f43f5e;          /* Alias for --color-brand-primary */
+  
   --font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
