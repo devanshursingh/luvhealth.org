@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import { Search, Calendar, Heart, CreditCard, ChevronDown } from 'lucide-react';
 import heroVideo from './assets/hero_background_video.mp4';
 import Layout from './components/Layout';
@@ -9,6 +9,8 @@ import AboutUs from './pages/AboutUs';
 import TermsOfService from './pages/TermsOfService';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ForProviders from './pages/ForProviders';
+import FindDoctors from './pages/FindDoctors';
+import Appointments from './pages/Appointments';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -16,9 +18,15 @@ import "slick-carousel/slick/slick-theme.css";
 function HomePage() {
   const [searchQuery, setSearchQuery] = useState('');
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+  const navigate = useNavigate();
 
   const handleSearch = () => {
-    window.open('https://form.typeform.com/to/jtte8Dj4', '_blank');
+    // Navigate to search page with query params
+    const params = new URLSearchParams();
+    if (searchQuery.trim()) {
+      params.set('q', searchQuery.trim());
+    }
+    navigate(`/search${params.toString() ? '?' + params.toString() : ''}`);
   };
 
   const toggleFAQ = (index: number) => {
@@ -202,14 +210,12 @@ function HomePage() {
               Don't Wait Months. Don't Wait on Hold.
           </p>
           <div className="text-center mb-12">
-            <a 
-              href="https://form.typeform.com/to/jtte8Dj4"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link 
+              to="/search"
               className="inline-block bg-ui-accent text-white px-8 py-4 rounded-full hover:bg-rose-600 transition font-sans font-semibold text-[18px]"
             >
               Find Doctors Now!
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Grid Layout */}
@@ -317,6 +323,8 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/search" element={<Layout><FindDoctors /></Layout>} />
+      <Route path="/appointments" element={<Layout><Appointments /></Layout>} />
       <Route path="/for-providers" element={<ForProviders />} />
       <Route path="/patient-faqs" element={<PatientFAQs />} />
       <Route path="/provider-faqs" element={<ProviderFAQs />} />

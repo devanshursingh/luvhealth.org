@@ -46,7 +46,7 @@
   /* Brand Colors */
   --color-brand-primary: #f43f5e;     /* Rose/Pink - Primary brand color (logo, CTAs, accents) */
   --color-brand-secondary: #ffffff;    /* White - Secondary brand color (contrast, text on colored backgrounds) */
-  --color-brand-tertiary: #151f28;     /* Dark gray - Tertiary brand color (dark backgrounds like footer, alternative to white) */
+  --color-brand-tertiary: #111827;     /* Dark gray - Tertiary brand color (dark backgrounds like footer, alternative to white) */
   
   /* UI/Text Colors (for text hierarchy and UI elements) */
   --color-text-primary: #111827;      /* Dark gray - Primary text color */

@@ -56,9 +56,9 @@ export default function Layout({ children }: LayoutProps) {
   // Navigation items configuration
   const navigationItems = [
     {
-      type: 'external' as const,
+      type: 'link' as const,
       label: 'Find Doctors',
-      href: 'https://form.typeform.com/to/jtte8Dj4',
+      to: '/search',
       showOnRoutes: ['/for-providers'],
     },
     {
