@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Search, MapPin, SlidersHorizontal } from 'lucide-react';
 import { mockDoctors } from '../../data/marketplace/mockData';
 import { Doctor, Booking } from '../../types/marketplace';
@@ -17,10 +17,46 @@ export function DoctorSearch({ onBookingComplete, initialQuery = '', initialSpec
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
   const [sortBy, setSortBy] = useState<'rating' | 'price'>('rating');
   const resultsRef = useRef<HTMLDivElement>(null);
+  const shouldScrollRef = useRef(false);
+
+  // Sync state with props when they change (e.g., URL params update)
+  useEffect(() => {
+    setSearchQuery(initialQuery);
+    setSelectedSpecialty(initialSpecialty);
+  }, [initialQuery, initialSpecialty]);
 
   const scrollToResults = () => {
-    resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Use setTimeout to ensure DOM is updated
+    setTimeout(() => {
+      resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
   };
+
+  // Scroll to results when there's an initial query (navigated from homepage)
+  useEffect(() => {
+    if (initialQuery) {
+      // Wait for DOM to update and results to render, then scroll
+      const timer = setTimeout(() => {
+        if (resultsRef.current) {
+          scrollToResults();
+        }
+      }, 400);
+      return () => clearTimeout(timer);
+    }
+  }, [initialQuery]); // Run when initialQuery changes
+
+  // Scroll when search is explicitly triggered (button click or Enter key)
+  // This effect watches for when shouldScrollRef is set to true
+  useEffect(() => {
+    if (shouldScrollRef.current && resultsRef.current) {
+      // Wait a bit for filtered results to render
+      const timer = setTimeout(() => {
+        scrollToResults();
+        shouldScrollRef.current = false;
+      }, 200);
+      return () => clearTimeout(timer);
+    }
+  }, [searchQuery, selectedSpecialty]);
 
   const specialties = [
     { label: 'Pediatrician', emoji: '👶', value: 'Pediatrics' },
@@ -44,7 +80,7 @@ export function DoctorSearch({ onBookingComplete, initialQuery = '', initialSpec
   return (
     <div className="min-h-screen">
       {/* Hero Section with Background */}
-      <div className="relative bg-[#111827]">
+      <div className="relative bg-[#111827] pt-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
           {/* Hero Text */}
           <h1 className="text-5xl md:text-6xl text-white mb-4">
@@ -66,10 +102,22 @@ export function DoctorSearch({ onBookingComplete, initialQuery = '', initialSpec
                     placeholder="Search for doctors or specialties..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter') {
+                        shouldScrollRef.current = true;
+                        scrollToResults();
+                      }
+                    }}
                     className="w-full pl-16 pr-6 py-5 text-gray-900 placeholder:text-gray-400 focus:outline-none"
                   />
                 </div>
-                <button className="px-8 py-5 bg-[#f43f5e] text-white rounded-full hover:bg-[#e11d48] transition-colors whitespace-nowrap m-1" onClick={scrollToResults}>
+                <button 
+                  className="px-8 py-5 bg-[#f43f5e] text-white rounded-full hover:bg-[#e11d48] transition-colors whitespace-nowrap m-1" 
+                  onClick={() => {
+                    shouldScrollRef.current = true;
+                    scrollToResults();
+                  }}
+                >
                   Find Doctors Now!
                 </button>
               </div>
@@ -85,11 +133,23 @@ export function DoctorSearch({ onBookingComplete, initialQuery = '', initialSpec
                     placeholder="Search doctors or specialties..."
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter') {
+                        shouldScrollRef.current = true;
+                        scrollToResults();
+                      }
+                    }}
                     className="w-full pl-16 pr-6 py-5 text-gray-900 placeholder:text-gray-400 focus:outline-none rounded-2xl"
                   />
                 </div>
               </div>
-              <button className="w-full px-8 py-5 bg-[#f43f5e] text-white rounded-2xl hover:bg-[#e11d48] transition-colors shadow-xl" onClick={scrollToResults}>
+              <button 
+                className="w-full px-8 py-5 bg-[#f43f5e] text-white rounded-2xl hover:bg-[#e11d48] transition-colors shadow-xl" 
+                onClick={() => {
+                  shouldScrollRef.current = true;
+                  scrollToResults();
+                }}
+              >
                 Find Doctors Now!
               </button>
             </div>

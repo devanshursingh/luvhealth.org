@@ -151,8 +151,10 @@ function HomePage() {
             <div className="flex flex-wrap justify-center gap-3 mt-6">
               <button
                 onClick={() => {
-                  setSearchQuery('Pediatrician');
-                  handleSearch();
+                  const params = new URLSearchParams();
+                  params.set('q', 'Pediatrician');
+                  params.set('specialty', 'Pediatrics');
+                  navigate(`/search?${params.toString()}`);
                 }}
                 className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
               >
@@ -160,8 +162,10 @@ function HomePage() {
               </button>
               <button
                 onClick={() => {
-                  setSearchQuery('Ob/Gyn');
-                  handleSearch();
+                  const params = new URLSearchParams();
+                  params.set('q', 'Ob/Gyn');
+                  params.set('specialty', 'Obstetrics & Gynecology');
+                  navigate(`/search?${params.toString()}`);
                 }}
                 className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
               >
@@ -169,8 +173,10 @@ function HomePage() {
               </button>
               <button
                 onClick={() => {
-                  setSearchQuery('Internist');
-                  handleSearch();
+                  const params = new URLSearchParams();
+                  params.set('q', 'Internist');
+                  params.set('specialty', 'Internal Medicine');
+                  navigate(`/search?${params.toString()}`);
                 }}
                 className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
               >
@@ -178,8 +184,10 @@ function HomePage() {
               </button>
               <button
                 onClick={() => {
-                  setSearchQuery('Neurologist');
-                  handleSearch();
+                  const params = new URLSearchParams();
+                  params.set('q', 'Neurologist');
+                  params.set('specialty', 'Neurology');
+                  navigate(`/search?${params.toString()}`);
                 }}
                 className="bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full hover:bg-white hover:shadow-lg transition font-sans text-[16px] font-medium flex items-center gap-2"
               >
