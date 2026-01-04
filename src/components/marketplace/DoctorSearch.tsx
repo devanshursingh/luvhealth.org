@@ -67,10 +67,22 @@ export function DoctorSearch({ onBookingComplete, initialQuery = '', initialSpec
 
   const filteredDoctors = mockDoctors
     .filter((doctor) => {
+      // Check specialty match
+      const matchesSpecialty = selectedSpecialty === 'all' || doctor.specialty === selectedSpecialty;
+      
+      // If a specific specialty is selected, show all doctors in that specialty
+      // (ignore search query when specialty filter is active)
+      if (selectedSpecialty !== 'all') {
+        return matchesSpecialty;
+      }
+      
+      // No specialty selected: apply text search filter
+      if (!searchQuery.trim()) {
+        return true; // Show all if no search query
+      }
       const matchesSearch = doctor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         doctor.specialty.toLowerCase().includes(searchQuery.toLowerCase());
-      const matchesSpecialty = selectedSpecialty === 'all' || doctor.specialty === selectedSpecialty;
-      return matchesSearch && matchesSpecialty;
+      return matchesSearch;
     })
     .sort((a, b) => {
       if (sortBy === 'rating') return b.rating - a.rating;
