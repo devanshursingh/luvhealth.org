@@ -149,9 +149,9 @@ function HomePage() {
             
             {/* Suggested Search Items */}
             <div className="mt-6">
-              <p className="text-center font-sans text-[14px] text-white/80 drop-shadow-md mb-3">
-                Popular searches
-              </p>
+              <span className="font-sans text-[16px] text-white/90 drop-shadow-md">
+                Popular searches:
+              </span>
               <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={() => {
