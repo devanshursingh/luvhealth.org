@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Linkedin } from 'lucide-react';
 import Layout from '../components/Layout';
 import devanshuPhoto from '../assets/0b9bf62f4bbf6d17d9b64af8a00f57f76d9a7f7b.png';
-import divyanshPhoto from '../assets/948fe3bdbd94ab8d333035ceffc4e0884e82054e.png';
 import srikanthPhoto from '../assets/5629bb49a580382f9f44d0885caef801b0de6dfc.png';
 
 const team = [
@@ -13,14 +12,6 @@ const team = [
     bio: "After a recent illness, Devanshu has made it his mission to create new options for patients and healthcare providers. Combining an AI background with academic expertise in political science. Hailing from a family of doctors, Devanshu has grown up around the healthcare system and knows the ins and outs of doctor-patient interactions.",
     linkedin: "https://www.linkedin.com/in/dsingh33",
     photo: devanshuPhoto,
-  },
-  {
-    name: "Divyansh Khare",
-    title: "Co-Founder, Luv Health Inc.",
-    credentials: "Software Engineer at Union Pacific Railroad Company",
-    bio: "Divyansh is an experienced Full Stack developer with history building high performing and scalable enterprise applications and services. His extensive knowledge of product-driven development paired with a drive to create the next advance in the technology space positions him to build solutions that are both visionary and deeply practical.",
-    linkedin: "https://www.linkedin.com/in/divyansh-khare/",
-    photo: divyanshPhoto,
   },
   {
     name: "Srikanth Bangalore",

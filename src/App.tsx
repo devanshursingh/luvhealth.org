@@ -148,7 +148,11 @@ function HomePage() {
             </div>
             
             {/* Suggested Search Items */}
-            <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <div className="mt-6">
+              <p className="text-center font-sans text-[14px] text-white/80 drop-shadow-md mb-3">
+                Popular searches
+              </p>
+              <div className="flex flex-wrap justify-center gap-3">
               <button
                 onClick={() => {
                   const params = new URLSearchParams();
@@ -193,6 +197,7 @@ function HomePage() {
               >
                 🧠 Neurologist
               </button>
+              </div>
             </div>
             
             {/* Available In */}

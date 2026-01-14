@@ -152,7 +152,7 @@ export const mockDoctors: Doctor[] = [
     rating: 4.9,
     reviewCount: 445,
     price: 195,
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=400&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
     bio: 'OB/GYN providing comprehensive women\'s health care including prenatal care, gynecological surgery, and reproductive health.',
     education: 'MD from University of Texas Southwestern',
     yearsExperience: 16,
